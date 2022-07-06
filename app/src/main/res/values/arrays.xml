@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="beruf">
+        <item>Kellner/in</item>
+        <item>Barmann/Fau</item>
+        <item>Thekenkraft</item>
+        <item>Restaurantfachmann/Frau</item>
+        <item>Restaurantleiter/in</item>
+        <item>Barmixer/in</item>
+        <item>Betriebsleiter/in</item>
+    </string-array>
+    <string-array name="betriebsart">
+        <item>Restaurant</item>
+        <item>Bar</item>
+        <item>Bierstube</item>
+        <item>Bistro</item>
+        <item>Cafee</item>
+        <item>Cocktailbar</item>
+        <item>Restaurant</item>
+    </string-array>
+    <string-array name="ort">
+        <item>Deutschland, 50937 Köln/Sülz</item>
+        <item>Deutschland, 50676 Köln/Atlstadt-Nord</item>
+        <item>Deutschland, 50673 Köln/Altstadt-Süd</item>
+        <item>Deutschland, 50676 Köln/Atlstadt-Nord</item>
+        <item>Deutschland, 50673 Köln/Altstadt-Süd</item>
+        <item>Deutschland, 50676 Köln/Atlstadt-Nord</item>
+        <item>Deutschland, 50937 Köln/Sülz</item>
+    </string-array>
+</resources>

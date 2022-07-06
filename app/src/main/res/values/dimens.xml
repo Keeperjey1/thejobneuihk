@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_margin">20dp</dimen>
+    <dimen name="beruf_textsize">20sp</dimen>
+    <dimen name="betriebsart_textsize">16sp</dimen>
+    <dimen name="ort_textsize">16sp</dimen>
+</resources>

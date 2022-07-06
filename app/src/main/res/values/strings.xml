@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TheJobNeu_v1</string>
+    <string name="beruf">Kellner</string>
+    <string name="betriebsart">Restaurant</string>
+    <string name="aktualisieren">Aktualisieren</string>
+    <string name="verfuegbarkeit">3 Tage Urlaubsvewrtretung</string>
+    <string name="ort">Ort des Betriebes</string>
+</resources>
