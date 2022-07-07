@@ -5,4 +5,9 @@
     <string name="aktualisieren">Aktualisieren</string>
     <string name="verfuegbarkeit">3 Tage Urlaubsvewrtretung</string>
     <string name="ort">Ort des Betriebes</string>
+    <string name="username">Benutzername</string>
+    <string name="password">Passwort</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="main">Startseite</string>
 </resources>
