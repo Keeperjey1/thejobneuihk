@@ -27,4 +27,14 @@
         <item>Deutschland, 50676 Köln/Atlstadt-Nord</item>
         <item>Deutschland, 50937 Köln/Sülz</item>
     </string-array>
+    <string-array name="verfuegbarkeit">
+        <item>ca 3 Tage wegen Krankheitsbedngtem Ausfall</item>
+        <item>5 Tage Urlaubsvertretung</item>
+        <item>Festanstellung</item>
+        <item>Aushilfe</item>
+        <item>Teilzeitjob</item>
+        <item>Festanstellung/Aushilfe</item>
+        <item>14 Tage Urlaubsvertretung</item>
+
+    </string-array>
 </resources>

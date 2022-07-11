@@ -141,7 +141,7 @@
                 android:id="@+id/tvVerfuegbarkeit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/verfuegbarkeit"
+                android:hint="@string/verfuegbarkeit"
                 android:textSize="16dp"
                 />
         </LinearLayout>

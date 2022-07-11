@@ -25,17 +25,24 @@ public class UserLogin extends AsyncTask <String, Void, String> {
 
     @Override
     protected void onPreExecute() {
-      /*  dialog = new AlertDialog.Builder(context).create();
-        dialog.setTitle("Login Status");*/
+       dialog = new AlertDialog.Builder(context).create();
+        dialog.setTitle("Login Status");
     }
+
+
     @Override
     protected void onPostExecute(String s) {
+        dialog.setMessage(s);
+        //dialog.show();
+        if (s.equals("testtestlogin successfull...!")) {
+            dialog.dismiss();
+            Intent intent = new Intent(context, MainActivity.class);
+            context.startActivity(intent);
+        } else {
+            dialog.setMessage(s);
+            dialog.show();
+        }
 
-
-
-
-       /* dialog.setMessage(s);
-        dialog.show();*/
     }
     @Override
     protected String doInBackground(String... voids) {
@@ -71,6 +78,9 @@ public class UserLogin extends AsyncTask <String, Void, String> {
             ips.close();
             http.disconnect();
             return result;
+
+
+
 
         } catch (MalformedURLException e) {
             result = e.getMessage();
