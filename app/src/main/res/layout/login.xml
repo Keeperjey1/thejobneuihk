@@ -15,15 +15,14 @@
             android:id="@+id/edtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="test">
+            android:hint="Username"
+            android:textSize="25sp"/>
 
-        </EditText>
         <EditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="test"
+            android:hint="Password"
             android:inputType="textPassword"
             android:textSize="25sp">
 

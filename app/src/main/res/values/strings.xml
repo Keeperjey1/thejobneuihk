@@ -10,4 +10,6 @@
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="main">Startseite</string>
+    <string name="refresh">Aktualisieren</string>
+    <string name="register">Registrieren</string>
 </resources>
