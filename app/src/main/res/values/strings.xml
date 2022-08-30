@@ -12,4 +12,5 @@
     <string name="main">Startseite</string>
     <string name="refresh">Aktualisieren</string>
     <string name="register">Registrieren</string>
+    <string name="myProfile">Mein Profil</string>
 </resources>

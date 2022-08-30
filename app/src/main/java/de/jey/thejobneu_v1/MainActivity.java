@@ -159,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.itRegister:
                 setContentView(R.layout.register);
                 return true;
+            case R.id.itProfile:
+                startActivity(new Intent(getApplicationContext(), MyProfile.class));
+                return true;
             case R.id.itLogout:
                 finish();
                 return true;
