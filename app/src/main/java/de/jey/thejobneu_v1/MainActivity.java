@@ -4,19 +4,13 @@ package de.jey.thejobneu_v1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-<<<<<<< HEAD
-
-import android.content.Context;
-=======
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
->>>>>>> 03d472ac84d96624f205adcb1781520be13292d2
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,13 +35,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText pas, usr;
-<<<<<<< HEAD
-
-   // public static final String LOG = MainActivity.class.getSimpleName();
-
-    //private List<String> mBerufList;
-    private List<JobOffer> mJobOfferList = new ArrayList<>();
-=======
     EditText u_name, u_surname, u_age, u_username, u_password;
     String method;
     String name, surname, age, username, password;
@@ -56,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private JobOfferAdapter adapter;
     private RecyclerView recyclerView;
     // RelativeLayout errorLayout;
->>>>>>> 03d472ac84d96624f205adcb1781520be13292d2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,42 +59,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-<<<<<<< HEAD
-        createJobsList();
-        bindAdapterToListView();
-    }
-    public class FetchData extends AsyncTask<Void, Void, Void> {
-        Context context;
-        public FetchData(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            return null;
-        }
-    }
-    private void createJobsList() {
-        FetchData fa = new FetchData(this);
-        UserLogin us = new UserLogin(this);
-        String[] beruf = getResources().getStringArray(R.array.beruf);
-        //mBerufList = new ArrayList<>(Arrays.asList(beruf));
-        String[] betriesart = getResources().getStringArray(R.array.betriebsart);
-
-        JobOffer jobOffer = new JobOffer(beruf[0], betriesart[0], "Deutschland, 50937 Koeln/Suelz", "Aushilfe");
-        mJobOfferList.add(jobOffer);
-        mJobOfferList.add(new JobOffer(beruf[1], betriesart[1], "Deutschland", "3 Tage"));
-        mJobOfferList.add(new JobOffer(beruf[2], "Kneipe", "Deutschland", "3 Tage"));
-        mJobOfferList.add(new JobOffer(beruf[3], "Bar-Restaurant", "Deutschland", "3 Tage"));
-        mJobOfferList.add(new JobOffer(beruf[4], "Bistro", "Deutschland", "6 Monate"));
-        mJobOfferList.add(new JobOffer(beruf[5], "Bar", "Deutschland", "Teilzeit"));
-        mJobOfferList.add(new JobOffer(beruf[6], "Bar", "Deutschland", "Festanstellung"));
-=======
         final ProgressDialog dialog = new ProgressDialog(this);
         dialog.setMessage("tafadhari subiri, inatafut...");
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
->>>>>>> 03d472ac84d96624f205adcb1781520be13292d2
 
         //receive data from php file
         final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchbuero2.php",new Response.Listener<String>() {
@@ -152,14 +106,9 @@ public class MainActivity extends AppCompatActivity {
         pas = findViewById(R.id.edtPassword);
         usr = findViewById(R.id.edtUsername);
 
-        String username = usr.getText().toString();
-        String password = pas.getText().toString();
+        String user = usr.getText().toString();
+        String pass = pas.getText().toString();
 
-<<<<<<< HEAD
-        UserLogin ul = new UserLogin(this);
-        ul.execute(username, password);
-       startActivity(new Intent(getApplicationContext(), MainActivity.class));
-=======
         Login ul = new Login(this);
         ul.execute(user, pass);
         //startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -187,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
->>>>>>> 03d472ac84d96624f205adcb1781520be13292d2
     }
 
     @Override
