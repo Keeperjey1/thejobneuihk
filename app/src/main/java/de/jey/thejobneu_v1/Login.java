@@ -3,6 +3,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -15,21 +17,42 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class UserLogin extends AsyncTask <String, Void, String> {
+public class Login extends AsyncTask <String, Void, String> {
     AlertDialog dialog;
     Context context;
 
-    public UserLogin(Context context) {
+    public Login(Context context) {
         this.context = context;
     }
 
     @Override
     protected void onPreExecute() {
-      /*  dialog = new AlertDialog.Builder(context).create();
-        dialog.setTitle("Login Status");*/
+       dialog = new AlertDialog.Builder(context).create();
+        dialog.setTitle("Login Status");
     }
+<<<<<<< HEAD:app/src/main/java/de/jey/thejobneu_v1/UserLogin.java
     @Override
     protected void onPostExecute(String s) {
+=======
+
+
+    @Override
+    protected void onPostExecute(String s) {
+        dialog.setMessage(s);
+        dialog.show();
+        if (s.equals("login successfull...!")) {
+           /* dialog.setMessage(s);
+            dialog.show();*/
+            Toast.makeText(context, "login successful!", Toast.LENGTH_LONG).show();
+           // dialog.dismiss();
+           /* Intent intent = new Intent(context, MainActivity.class);
+            context.startActivity(intent);*/
+        } else {
+            dialog.setMessage(s);
+            dialog.show();
+            Toast.makeText(context, "login not successful!", Toast.LENGTH_LONG).show();
+        }
+>>>>>>> 03d472ac84d96624f205adcb1781520be13292d2:app/src/main/java/de/jey/thejobneu_v1/Login.java
 
     }
     @Override
@@ -38,7 +61,11 @@ public class UserLogin extends AsyncTask <String, Void, String> {
         String username = voids[0];
         String password = voids[1];
 
+<<<<<<< HEAD:app/src/main/java/de/jey/thejobneu_v1/UserLogin.java
         String connect = "http://10.0.2.2/buero/login.php";
+=======
+        String connect = "http://192.168.64.150/buero2/loginbuero2.php";
+>>>>>>> 03d472ac84d96624f205adcb1781520be13292d2:app/src/main/java/de/jey/thejobneu_v1/Login.java
         try {
             URL url = new URL(connect);
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
@@ -66,6 +93,9 @@ public class UserLogin extends AsyncTask <String, Void, String> {
             ips.close();
             http.disconnect();
             return result;
+
+
+
 
         } catch (MalformedURLException e) {
             result = e.getMessage();

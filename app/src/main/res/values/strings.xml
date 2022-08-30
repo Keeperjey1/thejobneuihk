@@ -3,11 +3,14 @@
     <string name="beruf">Kellner</string>
     <string name="betriebsart">Restaurant</string>
     <string name="aktualisieren">Aktualisieren</string>
-    <string name="verfuegbarkeit">3 Tage Urlaubsvewrtretung</string>
+    <string name="verfuegbarkeit">Verfügbarkeit</string>
     <string name="ort">Ort des Betriebes</string>
     <string name="username">Benutzername</string>
     <string name="password">Passwort</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="main">Startseite</string>
+    <string name="refresh">Aktualisieren</string>
+    <string name="register">Registrieren</string>
+    <string name="myProfile">Mein Profil</string>
 </resources>

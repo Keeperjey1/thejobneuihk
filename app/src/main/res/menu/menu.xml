@@ -5,12 +5,19 @@
         android:title="@string/login"
         />
     <item
-        android:id="@+id/itLogout"
-        android:title="@string/logout"
+        android:id="@+id/itRegister"
+        android:title="@string/register"
         />
     <item
         android:id="@+id/itMain"
         android:title="@string/main"
         />
+    <item
+        android:id="@+id/itProfile"
+        android:title="@string/myProfile"
+        />
+    <item
+        android:id="@+id/itLogout"
+        android:title="logout"/>
 
 </menu>
