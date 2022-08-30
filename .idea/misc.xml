@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/activity_main.xml" value="0.14" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/contens.xml" value="0.1466275659824047" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/activity_my_profile.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/contens.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/item_file.xml" value="0.28717948717948716" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/listviewlayout.xml" value="0.35104166666666664" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/login.xml" value="0.1" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/register.xml" value="0.1388888888888889" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/login.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/register.xml" value="0.25" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/menu/menu.xml" value="0.29411764705882354" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/xml/network_security_config.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/jey/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/jey/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/listviewlayout.xml" value="0.17557251908396945" />
         <entry key="..\:/Users/jey/AndroidStudioProjects/thejobneuihk/app/src/main/res/layout/activity_main.xml" value="0.2421875" />
