@@ -14,6 +14,8 @@ public class JobOffer {
         this.verfuegbarkeit = verfuegbarkeit;
     }
 
+
+
     public String getBeruf() {
         return beruf;
     }

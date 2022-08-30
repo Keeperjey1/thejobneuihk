@@ -31,19 +31,14 @@ public class UserLogin extends AsyncTask <String, Void, String> {
     @Override
     protected void onPostExecute(String s) {
 
-
-
-
-       /* dialog.setMessage(s);
-        dialog.show();*/
     }
     @Override
     protected String doInBackground(String... voids) {
         String result = "";
-        String user = voids[0];
-        String pass = voids[1];
+        String username = voids[0];
+        String password = voids[1];
 
-        String connect = "http://10.0.2.2/login.php";
+        String connect = "http://10.0.2.2/buero/login.php";
         try {
             URL url = new URL(connect);
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
@@ -53,8 +48,8 @@ public class UserLogin extends AsyncTask <String, Void, String> {
 
             OutputStream ops = http.getOutputStream();
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(ops, "UTF-8"));
-            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
-                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8");
+            String data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8")
+                    + "&&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
             writer.write(data);
             writer.flush();
             writer.close();
