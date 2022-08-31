@@ -39,7 +39,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         spinBranche = findViewById(R.id.spiBranche);
         spinJobs = findViewById(R.id.spiJob);
         requestQueue = Volley.newRequestQueue(this);
-        String brancheUrl = "http://192.168.64.150/buero2/dropdownbranche.php";
+        String brancheUrl = "http://192.168.0.105/buero/dropdownbranche.php";
        // String jobsUrl = "http://192.168.64.150/buero/dropdownjobs.php";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                 brancheUrl, null, new Response.Listener<JSONObject>() {
@@ -76,7 +76,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         if (adapterView.getId() == R.id.spiBranche) {
             jobList.clear();
             String selectedBranche = adapterView.getSelectedItem().toString();
-            String jobsUrl = "http://192.168.64.150/buero2/dropdownjobs.php?branchenname="+selectedBranche;
+            String jobsUrl = "http://192.168.0.105/buero/dropdownjobs.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     jobsUrl, null, new Response.Listener<JSONObject>() {
@@ -86,7 +86,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                         JSONArray jsonArray = response.getJSONArray("jobs");
                         for (int i = 0; i<jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String branchenname = jsonObject.optString("job_name");
+                            String branchenname = jsonObject.optString("jobname");
                             jobList.add(branchenname);
                             jobsAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, jobList);
                             jobsAdapter.setDropDownViewResource(R.layout.item_file);

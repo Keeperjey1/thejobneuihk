@@ -27,13 +27,9 @@ public class Login extends AsyncTask <String, Void, String> {
 
     @Override
     protected void onPreExecute() {
-       dialog = new AlertDialog.Builder(context).create();
+        dialog = new AlertDialog.Builder(context).create();
         dialog.setTitle("Login Status");
     }
-<<<<<<< HEAD:app/src/main/java/de/jey/thejobneu_v1/UserLogin.java
-    @Override
-    protected void onPostExecute(String s) {
-=======
 
 
     @Override
@@ -44,7 +40,7 @@ public class Login extends AsyncTask <String, Void, String> {
            /* dialog.setMessage(s);
             dialog.show();*/
             Toast.makeText(context, "login successful!", Toast.LENGTH_LONG).show();
-           // dialog.dismiss();
+            // dialog.dismiss();
            /* Intent intent = new Intent(context, MainActivity.class);
             context.startActivity(intent);*/
         } else {
@@ -52,20 +48,15 @@ public class Login extends AsyncTask <String, Void, String> {
             dialog.show();
             Toast.makeText(context, "login not successful!", Toast.LENGTH_LONG).show();
         }
->>>>>>> 03d472ac84d96624f205adcb1781520be13292d2:app/src/main/java/de/jey/thejobneu_v1/Login.java
 
     }
     @Override
     protected String doInBackground(String... voids) {
         String result = "";
-        String username = voids[0];
-        String password = voids[1];
+        String user = voids[0];
+        String pass = voids[1];
 
-<<<<<<< HEAD:app/src/main/java/de/jey/thejobneu_v1/UserLogin.java
-        String connect = "http://10.0.2.2/buero/login.php";
-=======
-        String connect = "http://192.168.64.150/buero2/loginbuero2.php";
->>>>>>> 03d472ac84d96624f205adcb1781520be13292d2:app/src/main/java/de/jey/thejobneu_v1/Login.java
+        String connect = "http://192.168.0.105/buero/loginbuero.php";
         try {
             URL url = new URL(connect);
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
@@ -75,8 +66,8 @@ public class Login extends AsyncTask <String, Void, String> {
 
             OutputStream ops = http.getOutputStream();
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(ops, "UTF-8"));
-            String data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8")
-                    + "&&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
+            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
+                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8");
             writer.write(data);
             writer.flush();
             writer.close();

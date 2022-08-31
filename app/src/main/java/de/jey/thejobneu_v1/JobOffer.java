@@ -13,12 +13,7 @@ public class JobOffer {
         this.ort =ort;
         this.verfuegbarkeit = verfuegbarkeit;
     }
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 03d472ac84d96624f205adcb1781520be13292d2
     public String getBeruf() {
         return beruf;
     }
