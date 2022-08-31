@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     public void startActivity(Intent intent) {
         super.startActivity(intent);
     }
-h
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itLogin:
