@@ -142,15 +142,7 @@ public class MainActivity extends AppCompatActivity {
     public void startActivity(Intent intent) {
         super.startActivity(intent);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return  true;
-    }
-
-    @Override
+h
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itLogin:
