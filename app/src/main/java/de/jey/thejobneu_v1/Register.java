@@ -26,7 +26,7 @@ public class Register extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... voids) {
         String result = "";
-        String reg_url = "http://192.168.64.150/buero2/registerbuero2.php";
+        String reg_url = "http://192.168.0.105/buero/registerbuero.php";
         String method = voids[0];
         if (method.equals("register")) {
             String name = voids[1];

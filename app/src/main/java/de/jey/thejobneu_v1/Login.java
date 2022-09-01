@@ -27,7 +27,7 @@ public class Login extends AsyncTask <String, Void, String> {
 
     @Override
     protected void onPreExecute() {
-       dialog = new AlertDialog.Builder(context).create();
+        dialog = new AlertDialog.Builder(context).create();
         dialog.setTitle("Login Status");
     }
 
@@ -40,7 +40,7 @@ public class Login extends AsyncTask <String, Void, String> {
            /* dialog.setMessage(s);
             dialog.show();*/
             Toast.makeText(context, "login successful!", Toast.LENGTH_LONG).show();
-           // dialog.dismiss();
+            // dialog.dismiss();
            /* Intent intent = new Intent(context, MainActivity.class);
             context.startActivity(intent);*/
         } else {
@@ -56,7 +56,7 @@ public class Login extends AsyncTask <String, Void, String> {
         String user = voids[0];
         String pass = voids[1];
 
-        String connect = "http://192.168.64.150/buero2/loginbuero2.php";
+        String connect = "http://192.168.0.105/buero/loginbuero.php";
         try {
             URL url = new URL(connect);
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
