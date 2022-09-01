@@ -58,13 +58,8 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         spiErfJob3 = findViewById(R.id.spiJobErf3);
 
         requestQueue = Volley.newRequestQueue(this);
-<<<<<<< HEAD
         String brancheUrl = "http://192.168.64.150/buero2/dropdownbranche.php";
         //String jobsUrl = "http://192.168.64.150/buero/dropdownjobs.php";
-=======
-        String brancheUrl = "http://192.168.0.105/buero/dropdownbranche.php";
-       // String jobsUrl = "http://192.168.64.150/buero/dropdownjobs.php";
->>>>>>> e57a3f42570f10818585dd41539c90994b2c0353
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                 brancheUrl, null, new Response.Listener<JSONObject>() {
             @Override
@@ -137,13 +132,10 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
   /*  public void onItemSelected2(AdapterView<?> spinErfBra, View view, int i, long l) {
         if (spinErfBra.getId() == R.id.spiBraErf) {
             jobList.clear();
-<<<<<<< HEAD
             String selectedErf = spinErfBra.getSelectedItem().toString();
-            String jobsUrl = "http://192.168.64.150/buero2/dropdownjobs.php?bezeichnung="+selectedErf;
-=======
+            String jobsUrl = "http://192.168.64.150/buero2/dropdownjobs.php?bezeichnung="+selectedErf
             String selectedBranche = adapterView.getSelectedItem().toString();
             String jobsUrl = "http://192.168.0.105/buero/dropdownjobs.php?branchenname="+selectedBranche;
->>>>>>> e57a3f42570f10818585dd41539c90994b2c0353
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     jobsUrl, null, new Response.Listener<JSONObject>() {
@@ -153,13 +145,10 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                         JSONArray jsonArray = response.getJSONArray("jobs");
                         for (int i = 0; i<jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-<<<<<<< HEAD
                             String bezeichnung = jsonObject.optString("job_name");
                             jobList.add(bezeichnung);
-=======
                             String branchenname = jsonObject.optString("jobname");
                             jobList.add(branchenname);
->>>>>>> e57a3f42570f10818585dd41539c90994b2c0353
                             jobsAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, jobList);
                             jobsAdapter.setDropDownViewResource(R.layout.item_file);
                             spinJobs.setAdapter(jobsAdapter);
