@@ -30,7 +30,6 @@
             android:ems="10"
             android:hint="Profilname"
             android:textSize="20sp"/>
-<<<<<<< HEAD
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,114 +78,6 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/layoutJob"
-=======
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:id="@+id/tvBranchenauswahl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Wähle Branche aus"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <Spinner
-                        android:id="@+id/spiBranche"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@android:drawable/btn_dropdown" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:id="@+id/tvBraErf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Deine Erfahrung"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <Spinner
-                        android:id="@+id/spiBraErf"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@android:drawable/btn_dropdown" />
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/layoutJob"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-                        <TextView
-                            android:id="@+id/tvJobauswahl"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="Wähle Job aus"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                        <Spinner
-                            android:id="@+id/spiJob"
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@android:drawable/btn_dropdown" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-                        <TextView
-                            android:id="@+id/tvJobErf"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="Deine Erfahrung"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                        <Spinner
-                            android:id="@+id/spiJobErf"
-                            android:layout_width="150dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@android:drawable/btn_dropdown" />
-                    </LinearLayout>
-                </LinearLayout>
-                <Button
-                    android:id="@+id/btnNextJob"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="wähle einen weiteren Job aus"/>
-            </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layoutJob2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -202,67 +93,6 @@
                     android:orientation="vertical"
                     android:padding="10dp">
                     <TextView
-                        android:id="@+id/tvJobauswahl2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Wähle Job aus"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <Spinner
-                        android:id="@+id/spiJob2"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@android:drawable/btn_dropdown" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-                        android:id="@+id/tvJobErf2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Deine Erfahrung"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <Spinner
-                        android:id="@+id/spiJobErf2"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@android:drawable/btn_dropdown" />
-                </LinearLayout>
-            </LinearLayout>
-            <Button
-                android:id="@+id/btnNextJob2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="wähle einen weiteren Job aus"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layoutJob3"
->>>>>>> schule
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-                    <TextView
-<<<<<<< HEAD
                         android:id="@+id/tvJobauswahl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -381,8 +211,6 @@
                     android:orientation="vertical"
                     android:padding="10dp">
                     <TextView
-=======
->>>>>>> schule
                         android:id="@+id/tvJobauswahl3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
