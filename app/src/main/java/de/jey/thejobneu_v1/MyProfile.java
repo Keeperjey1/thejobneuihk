@@ -87,14 +87,17 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         });
         requestQueue.add(jsonObjectRequest);
         spinBranche.setOnItemSelectedListener(this);
+        spinErfBra.setOnItemSelectedListener(this);
+        spinJobs.setOnItemSelectedListener(this);
 
 
     }
 
-    public void onItemSelected(AdapterView<?> spinBranche, View view, int i, long l ) {
-        if (spinBranche.getId() == R.id.spiBranche) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l ) {
+        if (adapterView.getId() == R.id.spiBranche) {
             erfList.clear();
-            String selectedBranche = spinBranche.getSelectedItem().toString();
+            jobList.clear();
+            String selectedBranche = adapterView.getSelectedItem().toString();
             String erfUrl = "http://192.168.64.150/buero2/dropdownerf.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
@@ -111,22 +114,83 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                             erfAdapter.setDropDownViewResource(R.layout.item_file);
                             spinErfBra.setAdapter(erfAdapter);
                         }
-
                     }catch (JSONException e) {
                         e.printStackTrace();
-
                     }
-
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
                 }
             });
             requestQueue.add(jsonObjectRequest);
-            spinErfBra.setOnItemSelectedListener(this);
         }
+
+        if (adapterView.getId() == R.id.spiBraErf && !adapterView.getSelectedItem().toString().equals("")) {
+            jobList.clear();
+            String selectedBranche = spinBranche.getSelectedItem().toString();
+            String jobUrl = "http://192.168.64.150/buero2/dropdownjobs2.php?branchenname="+selectedBranche;
+            requestQueue = Volley.newRequestQueue(this);
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
+                    jobUrl, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        JSONArray jsonArray = response.getJSONArray("jobs");
+                        for (int i = 0; i<jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            String job_name = jsonObject.optString("job_name");
+                            jobList.add(job_name);
+                            jobsAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, jobList);
+                            jobsAdapter.setDropDownViewResource(R.layout.item_file);
+                            spinJobs.setAdapter(jobsAdapter);
+                            spinJobs2.setAdapter(jobsAdapter);
+                            spinJobs3.setAdapter(jobsAdapter);
+                        }
+                    }catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
+            });
+            requestQueue.add(jsonObjectRequest);
+        }
+        if (adapterView.getId() == R.id.spiJob) {
+            erfList.clear();
+            String selectedBranche = adapterView.getSelectedItem().toString();
+            String erfUrl = "http://192.168.64.150/buero2/dropdownerf.php?branchenname="+selectedBranche;
+            requestQueue = Volley.newRequestQueue(this);
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
+                    erfUrl, null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        JSONArray jsonArray = response.getJSONArray("erfahrung");
+                        for (int i = 0; i<jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            String bezeichnung = jsonObject.optString("bezeichnung");
+                            erfList.add(bezeichnung);
+                            erfAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, erfList);
+                            erfAdapter.setDropDownViewResource(R.layout.item_file);
+                            spiErfJob.setAdapter(erfAdapter);
+                            spiErfJob2.setAdapter(erfAdapter);
+                            spiErfJob3.setAdapter(erfAdapter);
+                        }
+                    }catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
+            });
+            requestQueue.add(jsonObjectRequest);
+        }
+
 
     }
   /*  public void onItemSelected2(AdapterView<?> spinErfBra, View view, int i, long l) {
