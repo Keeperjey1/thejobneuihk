@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
         //receive data from php file
-        final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchbuero2.php",new Response.Listener<String>() {
+        final StringRequest request = new StringRequest("http://192.168.0.105/buero/fetchbuero.php",new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 dialog.dismiss();
@@ -143,14 +143,6 @@ public class MainActivity extends AppCompatActivity {
         super.startActivity(intent);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return  true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itLogin:
