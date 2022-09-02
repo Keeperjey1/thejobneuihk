@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
         //receive data from php file
-        final StringRequest request = new StringRequest("http://192.168.0.105/buero/fetchbuero.php",new Response.Listener<String>() {
+        final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchbuero2.php",new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 dialog.dismiss();
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     public void startActivity(Intent intent) {
         super.startActivity(intent);
     }
-h
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itLogin:
