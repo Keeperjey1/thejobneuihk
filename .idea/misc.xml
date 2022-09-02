@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+<<<<<<< HEAD
         <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/activity_my_profile.xml" value="0.1" />
+=======
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/activity_my_profile.xml" value="0.18" />
+>>>>>>> schule
         <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/contens.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/item_file.xml" value="0.28717948717948716" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/TheJobNeu_v1/app/src/main/res/layout/listviewlayout.xml" value="0.35104166666666664" />
