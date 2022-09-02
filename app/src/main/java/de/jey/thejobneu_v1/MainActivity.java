@@ -143,8 +143,7 @@ public class MainActivity extends AppCompatActivity {
         super.startActivity(intent);
     }
 
-<<<<<<< HEAD
-=======
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
->>>>>>> schule
+
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itLogin:
