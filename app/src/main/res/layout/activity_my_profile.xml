@@ -260,26 +260,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
         <RelativeLayout
-            android:id="@+id/relFaehigkeiten"
+            android:id="@+id/relFaehigKenntn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/imvPlusFaeh"
+                android:id="@+id/imvFaKePlus"
                 android:layout_width="25sp"
                 android:layout_height="25sp"
                 android:visibility="visible"
-                android:onClick="openFaehigkeiten"
                 app:srcCompat="@android:drawable/ic_menu_add" />
 
             <ImageView
-                android:id="@+id/imvMinusFaeh"
+                android:id="@+id/imvFaKeMinus"
                 android:layout_width="25sp"
                 android:layout_height="25sp"
                 android:visibility="gone"
-                android:onClick="closeFaehigkeiten"
                 app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
             <TextView
@@ -287,117 +283,143 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_toRightOf="@+id/imvMinusFaeh"
-                android:text="Faehigkeiten"
+                android:layout_toRightOf="@+id/imvFaKePlus"
+                android:text="Faehigkeiten/Kenntnisse"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </RelativeLayout>
             <LinearLayout
-                android:id="@+id/linLayFaehig"
+                android:id="@+id/linLayFaehigKenntn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="visible"
                 android:orientation="vertical">
                 <RelativeLayout
-                    android:id="@+id/relBierZapfen"
+                    android:id="@+id/relTheBar"
                     android:layout_width="match_parent"
                     android:layout_marginLeft="30dp"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:id="@+id/imvBiZaPlus"
+                        android:id="@+id/imvTheBarPlus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
                         android:visibility="invisible"
                         app:srcCompat="@android:drawable/ic_menu_add" />
 
                     <ImageView
-                        android:id="@+id/imvBiZaMinus"
+                        android:id="@+id/imvTheBarMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
                         android:visibility="visible"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                     <TextView
-                        android:id="@+id/tvFaehigktvBierZapfen"
+                        android:id="@+id/tvTheBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_toRightOf="@+id/imvBiZaMinus"
-                        android:text="Bier Zapfen"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvTheBarPlus"
+                        android:text="Theke/Bar"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <LinearLayout
-                    android:id="@+id/linLayzapfen"
+                    android:id="@+id/linLayTheBar"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="visible">
-                    <TextView
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/relBiZa"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Achtung Profile können bewertet werden!"
-                        android:textColor="@color/purple_500"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
-                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imvBiZaPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imvBiZaMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvBiZa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_toRightOf="@+id/imvBiZaPlus"
+                            android:text="Bier Zapfen"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/relCockMix"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
-                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imvCockMixPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imvCockMixMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvFaehigkeiten3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_toRightOf="@+id/imvCockMixMinus"
+                            android:text="Cocktail Mixen"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/relAusgaKoordi"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="wählen Sie Ihr Level realistisch aus"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"/>
-                    <Spinner
-                        android:id="@+id/spiBiZaLevel"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@android:drawable/btn_dropdown" />
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imvAusgaKorPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imvAusgaKorMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvAusgaKor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_toRightOf="@+id/imvAusgaKorMinus"
+                            android:text="Getränkeausgabe Koordinieren"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
                 </LinearLayout>
-                <RelativeLayout
-                    android:id="@+id/relCockMix"
-                    android:layout_width="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/imvCockMixPlus"
-                        android:layout_width="25sp"
-                        android:layout_height="25sp"
-                        android:visibility="invisible"
-                        app:srcCompat="@android:drawable/ic_menu_add" />
 
-                    <ImageView
-                        android:id="@+id/imvCockMixMinus"
-                        android:layout_width="25sp"
-                        android:layout_height="25sp"
-                        android:visibility="visible"
-                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
-                    <TextView
-                        android:id="@+id/tvFaehigkeiten3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_toRightOf="@+id/imvCockMixMinus"
-                        android:text="Cocktail Mixen"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
                 <LinearLayout
                     android:id="@+id/linLayCockMix"
                     android:layout_width="match_parent"
@@ -441,35 +463,7 @@
                         android:background="@android:drawable/btn_dropdown" />
                 </LinearLayout>
 
-                <RelativeLayout
-                    android:id="@+id/relAusgaKoordi"
-                    android:layout_width="match_parent"
-                    android:layout_marginLeft="30dp"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/imvAusgaKorPlus"
-                        android:layout_width="25sp"
-                        android:layout_height="25sp"
-                        android:visibility="invisible"
-                        app:srcCompat="@android:drawable/ic_menu_add" />
 
-                    <ImageView
-                        android:id="@+id/imvAusgaKorMinus"
-                        android:layout_width="25sp"
-                        android:layout_height="25sp"
-                        android:visibility="visible"
-                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
-
-                    <TextView
-                        android:id="@+id/tvAusgaKor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_toRightOf="@+id/imvAusgaKorMinus"
-                        android:text="Getränkeausgabe Koordinieren"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
                 <LinearLayout
                     android:id="@+id/linLayAusgaKor"
                     android:layout_width="match_parent"

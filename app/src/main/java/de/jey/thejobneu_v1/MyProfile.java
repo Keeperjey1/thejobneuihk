@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -41,9 +40,9 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
     Button waehleJob3;
     LinearLayout layoutJob2;
     LinearLayout layoutJob3;
-    ImageView imvFaehigPlus;
-    ImageView imvFaehigMinus;
-    LinearLayout linLayFaehig;
+    ImageView imvFaKePlus;
+    ImageView imvFaKeMinus;
+    LinearLayout linLayFaehigKenntn;
     ArrayList<String> brancheList = new ArrayList<>();
     ArrayList<String> jobList = new ArrayList<>();
     ArrayList<String> erfList = new ArrayList<>();
@@ -70,25 +69,25 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         layoutJob3 = findViewById(R.id.layoutJob3);
         waehleJob2 = findViewById(R.id.btnNextJob2);
         waehleJob3 = findViewById(R.id.btnNextJob3);
-        imvFaehigPlus = findViewById(R.id.imvPlusFaeh);
-        imvFaehigMinus = findViewById(R.id.imvMinusFaeh);
-        linLayFaehig = findViewById(R.id.linLayFaehig);
+        imvFaKePlus = findViewById(R.id.imvFaKePlus);
+        imvFaKeMinus = findViewById(R.id.imvFaKeMinus);
+        linLayFaehigKenntn = findViewById(R.id.linLayFaehigKenntn);
 
-        imvFaehigPlus.setOnClickListener(new View.OnClickListener() {
+        imvFaKePlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linLayFaehig.setVisibility(LinearLayout.VISIBLE);
-                imvFaehigMinus.setVisibility(ImageView.VISIBLE);
-                imvFaehigPlus.setVisibility(ImageView.GONE);
+                linLayFaehigKenntn.setVisibility(LinearLayout.VISIBLE);
+                imvFaKeMinus.setVisibility(ImageView.VISIBLE);
+                imvFaKePlus.setVisibility(ImageView.GONE);
             }
         });
 
-        imvFaehigMinus.setOnClickListener(new View.OnClickListener() {
+        imvFaKeMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linLayFaehig.setVisibility(LinearLayout.GONE);
-                imvFaehigMinus.setVisibility(ImageView.GONE);
-                imvFaehigPlus.setVisibility(ImageView.VISIBLE);
+                linLayFaehigKenntn.setVisibility(LinearLayout.GONE);
+                imvFaKeMinus.setVisibility(ImageView.GONE);
+                imvFaKePlus.setVisibility(ImageView.VISIBLE);
             }
         });
 
@@ -369,8 +368,8 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         linLayFaehig.setVisibility(LinearLayout.VISIBLE);
 
     }*/
-    public void closeFaehigkeiten(View view) {
+   /* public void closeFaehigkeiten(View view) {
         linLayFaehig.setVisibility(LinearLayout.GONE);
 
-    }
+    }*/
 }

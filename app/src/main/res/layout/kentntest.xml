@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MyProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_editor_absoluteX="1dp"
+    app:layout_editor_absoluteY="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/tvProfilname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="Geben Sie einen Profilnamen an"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/edtProfilname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="Profilname"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tvBranchenauswahl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Wähle Branche aus"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <Spinner
+                    android:id="@+id/spiBranche"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:drawable/btn_dropdown" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tvBraErf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Deine Erfahrung"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <Spinner
+                    android:id="@+id/spiBraErf"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:drawable/btn_dropdown" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/tvJobauswahl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Wähle Job aus"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spiJob"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/tvJobErf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Deine Erfahrung"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spiJobErf"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnNextJob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="waehleJob2"
+                android:text="wähle einen weiteren Job aus"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutJob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/tvJobauswahl2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Wähle Job aus"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spiJob2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/tvJobErf2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Deine Erfahrung"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spiJobErf2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnNextJob2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="waehleJob3"
+                android:text="wähle einen weiteren Job aus"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutJob3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/tvJobauswahl3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Wähle Job aus"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spiJob3"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/tvJobErf3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Deine Erfahrung"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spiJobErf3"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnNextJob3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="waehleJob3"
+                android:text="wähle einen weiteren Job aus"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/relFaehigKenntn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imvFaKePlus"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:visibility="visible"
+                    app:srcCompat="@android:drawable/ic_menu_add" />
+
+                <ImageView
+                    android:id="@+id/imvFaKeMinus"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:visibility="gone"
+                    app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                <TextView
+                    android:id="@+id/tvFaehigkeiten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_toRightOf="@+id/imvFaKePlus"
+                    android:text="Faehigkeiten/Kenntnisse"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/linLayFaehigKenntn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/relTheBar"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="20sp">
+                    <ImageView
+                        android:id="@+id/imvTheBarPlus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="gone"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvTheBarMinus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                    <TextView
+                        android:id="@+id/tvTheBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvTheBarPlus"
+                        android:text="Theke/Bar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linTheBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/relTheBarAllg"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imvTheBarAllgPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imvTheBarAllgMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvBiZa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_toRightOf="@+id/imvTheBarAllgPlus"
+                            android:text="Theke/BAr Allgemein"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/linBiZa"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Achtung Profile können bewertet werden!"
+                            android:textColor="@color/purple_500"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="wählen Sie Ihr Level realistisch aus"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+                                <TextView
+                                    android:id="@+id/tvTheBarAllgErf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Deine Erfahrung in Zeit"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                                <Spinner
+                                    android:id="@+id/spiTheBArAllgErf"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+                                <TextView
+                                    android:id="@+id/tvTheBarAllgLevel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Wie schätzt du dich ein"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                                <Spinner
+                                    android:id="@+id/spiTheBarAllgLevel"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:id="@+id/relZaMiAu"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imZaMiAuPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imZaMiAuMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvCockMix"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_toRightOf="@+id/imZaMiAuPlus"
+                            android:text="Zapfen/Mixen/Ausgabe etc."
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/linCockMix"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Achtung Profile können bewertet werden!"
+                            android:textColor="@color/purple_500"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="wählen Sie Ihr Level realistisch aus"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+                                <TextView
+                                    android:id="@+id/tvZaMiAuBier"
+                                    android:layout_width="140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Bier Zapfen"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <Spinner
+                                    android:id="@+id/spiBiZa"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+                                <TextView
+                                    android:id="@+id/tvZaMiAuCock"
+                                    android:layout_width="140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Mixgetraenke"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <Spinner
+                                    android:id="@+id/spiZaMiAuCock"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+                                <TextView
+                                    android:id="@+id/tvZaMiAuAndere"
+                                    android:layout_width="140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="andere Getraenke"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <Spinner
+                                    android:id="@+id/spiZaMiAuAndere"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+                                <TextView
+                                    android:id="@+id/tvZaMIAuAusgabe"
+                                    android:layout_width="140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Getränke-Ausgabe"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <Spinner
+                                    android:id="@+id/spiZaMiAuAusgabe"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/relServ"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="30dp">
+                    <ImageView
+                        android:id="@+id/imvServPlus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvServMinus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                    <TextView
+                        android:id="@+id/tvServ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvServPlus"
+                        android:text="Theke/Bar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linServ"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/relDirec"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="20sp">
+                    <ImageView
+                        android:id="@+id/imvDirecPlus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvDirecMinus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                    <TextView
+                        android:id="@+id/tvDirec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvDirecPlus"
+                        android:text="Theke/Bar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linDirec"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/relSec4"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="20sp">
+                    <ImageView
+                        android:id="@+id/imvSec4Plus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvSec4Minus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+                    <TextView
+                        android:id="@+id/tvSec4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvSec4Plus"
+                        android:text="Theke/Bar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linSec4"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/relSec5"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="20sp">
+                    <ImageView
+                        android:id="@+id/imvSec5Plus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvSec5Minus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+                    <TextView
+                        android:id="@+id/tvSec5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvSec5Plus"
+                        android:text="Theke/Bar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linSec5"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/relSec6"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="20sp">
+                    <ImageView
+                        android:id="@+id/imvSec6Plus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvSec6Minus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+                    <TextView
+                        android:id="@+id/tvSec6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvSec6Plus"
+                        android:text="Theke/Bar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linSec6"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/relSec7"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="20sp">
+                    <ImageView
+                        android:id="@+id/imvSec7Plus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvSec7Minus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+                    <TextView
+                        android:id="@+id/tvSec7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_toRightOf="@+id/imvSec7Plus"
+                        android:text="Theke/Bar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linSec7"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
