@@ -133,6 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:onClick="waehleJob2"
                 android:text="wähle einen weiteren Job aus"/>
         </LinearLayout>
         <LinearLayout
@@ -140,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -192,6 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:onClick="waehleJob3"
                 android:text="wähle einen weiteren Job aus"/>
         </LinearLayout>
         <LinearLayout
@@ -199,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -251,7 +253,379 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:onClick="waehleJob3"
                 android:text="wähle einen weiteren Job aus"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/relFaehigkeiten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imvPlusFaeh"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
+                android:visibility="visible"
+                android:onClick="openFaehigkeiten"
+                app:srcCompat="@android:drawable/ic_menu_add" />
+
+            <ImageView
+                android:id="@+id/imvMinusFaeh"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
+                android:visibility="gone"
+                android:onClick="closeFaehigkeiten"
+                app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+            <TextView
+                android:id="@+id/tvFaehigkeiten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_toRightOf="@+id/imvMinusFaeh"
+                android:text="Faehigkeiten"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/linLayFaehig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/relBierZapfen"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imvBiZaPlus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="invisible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvBiZaMinus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                    <TextView
+                        android:id="@+id/tvFaehigktvBierZapfen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/imvBiZaMinus"
+                        android:text="Bier Zapfen"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linLayzapfen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Achtung Profile können bewertet werden!"
+                        android:textColor="@color/purple_500"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="wählen Sie Ihr Level realistisch aus"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <Spinner
+                        android:id="@+id/spiBiZaLevel"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/relCockMix"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imvCockMixPlus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="invisible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvCockMixMinus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                    <TextView
+                        android:id="@+id/tvFaehigkeiten3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/imvCockMixMinus"
+                        android:text="Cocktail Mixen"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linLayCockMix"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Achtung Profile können bewertet werden!"
+                        android:textColor="@color/purple_500"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="wählen Sie Ihr Level realistisch aus"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <Spinner
+                        android:id="@+id/spiCockMixLevel"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relAusgaKoordi"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imvAusgaKorPlus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="invisible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/imvAusgaKorMinus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                    <TextView
+                        android:id="@+id/tvAusgaKor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/imvAusgaKorMinus"
+                        android:text="Getränkeausgabe Koordinieren"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/linLayAusgaKor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Achtung Profile können bewertet werden!"
+                        android:textColor="@color/purple_500"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="wählen Sie Ihr Level realistisch aus"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <Spinner
+                        android:id="@+id/spiAusgaKorLevel"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relThePflege"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imvThePflePlus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="invisible"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
+
+                    <ImageView
+                        android:id="@+id/ThePfleMinus"
+                        android:layout_width="25sp"
+                        android:layout_height="25sp"
+                        android:visibility="visible"
+                        app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                    <TextView
+                        android:id="@+id/tvThePfle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/imvThePflePlus"
+                        android:text="Thekenpflege"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/linLayThePflege"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Achtung Profile können bewertet werden!"
+                        android:textColor="@color/purple_500"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="wählen Sie Ihr Level realistisch aus"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <Spinner
+                        android:id="@+id/spiThePflege"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:drawable/btn_dropdown" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/relKenntnisse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
+                android:visibility="visible"
+                app:srcCompat="@android:drawable/ic_menu_add" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
+                android:visibility="invisible"
+                app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+            <TextView
+
+                android:id="@+id/tvKenntnisse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imageView4"
+                android:layout_marginStart="10dp"
+                android:text="Kenntnisse"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/layKenntnisse"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
