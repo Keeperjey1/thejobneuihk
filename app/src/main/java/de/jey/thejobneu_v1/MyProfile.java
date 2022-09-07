@@ -105,7 +105,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
 
 
         requestQueue = Volley.newRequestQueue(this);
-        String brancheUrl = "http://192.168.64.150/buero2/dropdownbranche.php";
+        String brancheUrl = "http://192.168.0.105/buero/dropdownbranche.php";
         //String jobsUrl = "http://192.168.64.150/buero/dropdownjobs.php";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                 brancheUrl, null, new Response.Listener<JSONObject>() {
@@ -150,7 +150,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
             erfList.clear();
             jobList.clear();
             String selectedBranche = adapterView.getSelectedItem().toString();
-            String erfUrl = "http://192.168.64.150/buero2/dropdownerf.php?branchenname="+selectedBranche;
+            String erfUrl = "http://192.168.0.105/buero/dropdownerf.php?branchenname="+selectedBranche;
 
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
@@ -182,7 +182,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         if (adapterView.getId() == R.id.spiBraErf && !adapterView.getSelectedItem().toString().equals("")) {
             jobList.clear();
             String selectedBranche = spinBranche.getSelectedItem().toString();
-            String jobUrl = "http://192.168.64.150/buero2/dropdownjobs2.php?branchenname="+selectedBranche;
+            String jobUrl = "http://192.168.0.105/buero/dropdownjobs.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     jobUrl, null, new Response.Listener<JSONObject>() {
@@ -192,7 +192,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                         JSONArray jsonArray = response.getJSONArray("jobs");
                         for (int i = 0; i<jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String job_name = jsonObject.optString("job_name");
+                            String job_name = jsonObject.optString("jobname");
                             jobList.add(job_name);
                             jobsAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, jobList);
                             jobsAdapter.setDropDownViewResource(R.layout.item_file);
@@ -214,7 +214,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         if (adapterView.getId() == R.id.spiJob) {
             erfList.clear();
             String selectedBranche = adapterView.getSelectedItem().toString();
-            String erfUrl = "http://192.168.64.150/buero2/dropdownerf.php?branchenname="+selectedBranche;
+            String erfUrl = "http://192.168.0.105/buero/dropdownerf.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     erfUrl, null, new Response.Listener<JSONObject>() {
@@ -246,7 +246,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         if (adapterView.getId() == R.id.spiJobErf && !adapterView.getSelectedItem().toString().equals("")) {
             jobList.clear();
             String selectedBranche = spinBranche.getSelectedItem().toString();
-            String jobUrl = "http://192.168.64.150/buero2/dropdownjobs2.php?branchenname="+selectedBranche;
+            String jobUrl = "http://192.168.0.105/buero/dropdownjobs.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     jobUrl, null, new Response.Listener<JSONObject>() {
@@ -256,7 +256,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                         JSONArray jsonArray = response.getJSONArray("jobs");
                         for (int i = 0; i<jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String job_name = jsonObject.optString("job_name");
+                            String job_name = jsonObject.optString("jobname");
                             jobList.add(job_name);
                             jobsAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, jobList);
                             jobsAdapter.setDropDownViewResource(R.layout.item_file);
@@ -278,7 +278,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         if (adapterView.getId() == R.id.spiJob2) {
             erfList.clear();
             String selectedBranche = adapterView.getSelectedItem().toString();
-            String erfUrl = "http://192.168.64.150/buero2/dropdownerf.php?branchenname="+selectedBranche;
+            String erfUrl = "http://192.168.0.105/buero/dropdownerf.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     erfUrl, null, new Response.Listener<JSONObject>() {
@@ -308,7 +308,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         if (adapterView.getId() == R.id.spiJobErf2 && !adapterView.getSelectedItem().toString().equals("")) {
             jobList.clear();
             String selectedBranche = spinBranche.getSelectedItem().toString();
-            String jobUrl = "http://192.168.64.150/buero2/dropdownjobs2.php?branchenname="+selectedBranche;
+            String jobUrl = "http://192.168.0.105/buero/dropdownjobs.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     jobUrl, null, new Response.Listener<JSONObject>() {
@@ -318,7 +318,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                         JSONArray jsonArray = response.getJSONArray("jobs");
                         for (int i = 0; i<jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String job_name = jsonObject.optString("job_name");
+                            String job_name = jsonObject.optString("jobname");
                             jobList.add(job_name);
                             jobsAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, jobList);
                             jobsAdapter.setDropDownViewResource(R.layout.item_file);
@@ -339,7 +339,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         if (adapterView.getId() == R.id.spiJob3) {
             erfList.clear();
             String selectedBranche = adapterView.getSelectedItem().toString();
-            String erfUrl = "http://192.168.64.150/buero2/dropdownerf.php?branchenname="+selectedBranche;
+            String erfUrl = "http://192.168.0.105/buero/dropdownerf.php?branchenname="+selectedBranche;
             requestQueue = Volley.newRequestQueue(this);
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     erfUrl, null, new Response.Listener<JSONObject>() {
