@@ -1,8 +1,10 @@
 package de.jey.thejobneu_v1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -50,9 +52,17 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
     ArrayAdapter<String> jobsAdapter;
     ArrayAdapter<String> erfAdapter;
     RequestQueue requestQueue;
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        return super.onContextItemSelected(item);
+    }
+
+
+
     /*  String[] branche = {"Gastronomie", "Medizin", "Informatik"};
-      String[] jobs = {"Barman", "Kellner", "Thekenkraft", "Betriebsleiter"};
-  */
+          String[] jobs = {"Barman", "Kellner", "Thekenkraft", "Betriebsleiter"};
+      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +92,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
             }
         });
 
+
         imvFaKeMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +101,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imvFaKePlus.setVisibility(ImageView.VISIBLE);
             }
         });
+
 
 
         requestQueue = Volley.newRequestQueue(this);
