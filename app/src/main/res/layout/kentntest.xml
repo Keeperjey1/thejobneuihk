@@ -363,7 +363,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:visibility="gone">
+                        android:visibility="visible">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -475,6 +475,392 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Achtung Profile können bewertet werden!"
+                            android:textColor="@color/purple_500"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="wählen Sie Ihr Level realistisch aus"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                                <TextView
+                                    android:id="@+id/tvZaMiAuBier"
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="10dp"
+                                    android:text="Bier Zapfen"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+                                <Spinner
+                                    android:id="@+id/spiBiZaLevel"
+                                    android:layout_width="180dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvZaMiAuCock"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="Cocktails"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiCockMixLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvZaMiAuAndere"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="and. Getränke"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiAndereLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvZaMiAuAusg"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="Getr. Ausgabe"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiAusgLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:id="@+id/relProKenn"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imvProKennPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imvProKennMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvProKenn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_toRightOf="@+id/imvProKennPlus"
+                            android:text="Produktkenntnisse/Gläserkunde"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/linProKenn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Achtung Profile können bewertet werden!"
+                            android:textColor="@color/purple_500"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="wählen Sie Ihr Level realistisch aus"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvProKennBier"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="Bierkenntnisse"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiBiKennLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvProKennWein"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="Cocktails"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiWeiKennLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvProKennGin"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="and. Getränke"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiGinKennLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvProKennWhyskie"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="Whyskiekenntn"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiWhyKennLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvProKennRum"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="Rumkenntnisse"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiRumKennLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+                            <TextView
+                                android:id="@+id/tvProKennAndere"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:text="andere Getr."
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiAndereKennLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/tvProKennGla"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Gläserkunde"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <Spinner
+                                android:id="@+id/spiGlaKennLevel"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:drawable/btn_dropdown" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:id="@+id/relTheBarLei"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imvTheBarLeiPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imvTheBarLeiMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvTheBarLei"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_toRightOf="@+id/imvTheBarLeiPlus"
+                            android:text="Theke/BAr Leitung"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/linTheBarLei"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
                         android:visibility="visible">
                         <TextView
                             android:layout_width="match_parent"
@@ -516,29 +902,107 @@
                                 android:orientation="vertical"
                                 android:padding="10dp">
                                 <TextView
-                                    android:id="@+id/tvZaMiAuBier"
-                                    android:layout_width="140dp"
+                                    android:id="@+id/tvTheBarLeiErf"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:text="Bier Zapfen"
-                                    android:textSize="24sp"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Erf. Thekenleitung"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
-
+                                <Spinner
+                                    android:id="@+id/spiTheBarLeiErf"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@android:drawable/btn_dropdown" />
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 android:padding="10dp">
-
+                                <TextView
+                                    android:id="@+id/tvTheBarLeigLevel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Wie schätzt du dich ein"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
                                 <Spinner
-                                    android:id="@+id/spiBiZa"
+                                    android:id="@+id/spiTheBarLeiLevel"
                                     android:layout_width="150dp"
                                     android:layout_height="40dp"
                                     android:layout_marginTop="10dp"
                                     android:background="@android:drawable/btn_dropdown" />
                             </LinearLayout>
                         </LinearLayout>
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:id="@+id/relTheBarPla"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imvTheBarPlaPlus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@android:drawable/ic_menu_add" />
+
+                        <ImageView
+                            android:id="@+id/imvTheBarPlaMinus"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:visibility="visible"
+                            app:srcCompat="@android:drawable/dialog_holo_light_frame" />
+
+                        <TextView
+                            android:id="@+id/tvTheBarPla"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_toRightOf="@+id/imvTheBarPlaPlus"
+                            android:text="Theke/BAr Planung"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:id="@+id/linTheBarPla"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Achtung Profile können bewertet werden!"
+                            android:textColor="@color/purple_500"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="bitte schätzen Sie Ihre Faehigkeiten realistisch ein!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mit selbstüberschätzung tuen Sie sich keinn gefallen!"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="wählen Sie Ihr Level realistisch aus"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -550,91 +1014,35 @@
                                 android:orientation="vertical"
                                 android:padding="10dp">
                                 <TextView
-                                    android:id="@+id/tvZaMiAuCock"
-                                    android:layout_width="140dp"
+                                    android:id="@+id/tvTheBarPlaErf"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:text="Mixgetraenke"
-                                    android:textSize="24sp"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Erf. Planung"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
-
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
                                 <Spinner
-                                    android:id="@+id/spiZaMiAuCock"
+                                    android:id="@+id/spiTheBarPlaErf"
                                     android:layout_width="150dp"
                                     android:layout_height="40dp"
                                     android:layout_marginTop="10dp"
                                     android:background="@android:drawable/btn_dropdown" />
                             </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="10dp">
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-                                <TextView
-                                    android:id="@+id/tvZaMiAuAndere"
-                                    android:layout_width="140dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:text="andere Getraenke"
-                                    android:textSize="24sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 android:padding="10dp">
-
-                                <Spinner
-                                    android:id="@+id/spiZaMiAuAndere"
-                                    android:layout_width="150dp"
-                                    android:layout_height="40dp"
-                                    android:layout_marginTop="10dp"
-                                    android:background="@android:drawable/btn_dropdown" />
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="10dp">
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
                                 <TextView
-                                    android:id="@+id/tvZaMIAuAusgabe"
-                                    android:layout_width="140dp"
+                                    android:id="@+id/tvTheBarPlaLevel"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:text="Getränke-Ausgabe"
-                                    android:textSize="24sp"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Wie schätzt du dich ein"
+                                    android:textSize="16sp"
                                     android:textStyle="bold" />
-
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
                                 <Spinner
-                                    android:id="@+id/spiZaMiAuAusgabe"
+                                    android:id="@+id/spiTheBarPlaLevel"
                                     android:layout_width="150dp"
                                     android:layout_height="40dp"
                                     android:layout_marginTop="10dp"
