@@ -141,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -201,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -261,7 +261,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RelativeLayout
-                android:id="@+id/relFaehigKenntn"
+                android:id="@+id/relFaKe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
@@ -279,7 +279,7 @@
                     app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                 <TextView
-                    android:id="@+id/tvFaehigkeiten"
+                    android:id="@+id/tvFaKe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -288,9 +288,9 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </RelativeLayout>
-            <!--               LinFaehKenn-->
+            <!--               LinFaKe-->
             <LinearLayout
-                android:id="@+id/linLayFaehigKenntn"
+                android:id="@+id/linFaKen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="visible"
@@ -332,19 +332,19 @@
                     android:visibility="visible"
                     android:orientation="vertical">
                     <RelativeLayout
-                        android:id="@+id/relTheBarAllg"
+                        android:id="@+id/relTheBarAll"
                         android:layout_width="match_parent"
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
                         <ImageView
-                            android:id="@+id/imvTheBarAllgPlus"
+                            android:id="@+id/imvTheBarAllPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="invisible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
-                            android:id="@+id/imvTheBarAllgMinus"
+                            android:id="@+id/imvTheBarAllMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
@@ -355,13 +355,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
-                            android:layout_toRightOf="@+id/imvTheBarAllgPlus"
+                            android:layout_toRightOf="@+id/imvTheBarAllPlus"
                             android:text="Theke/BAr Allgemein"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
                     <LinearLayout
-                        android:id="@+id/linTheBarAllg"
+                        android:id="@+id/linTheBarAll"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -449,25 +449,25 @@
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
                         <ImageView
-                            android:id="@+id/imZaMiAuPlus"
+                            android:id="@+id/imvZaMiAuPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
-                            android:id="@+id/imZaMiAuMinus"
+                            android:id="@+id/imvZaMiAuMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
                             app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                         <TextView
-                            android:id="@+id/tvCockMix"
+                            android:id="@+id/tvZaMiAu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
-                            android:layout_toRightOf="@+id/imZaMiAuPlus"
+                            android:layout_toRightOf="@+id/imvZaMiAuPlus"
                             android:text="Zapfen/Mixen/Ausgabe etc."
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -602,19 +602,19 @@
 
                     </LinearLayout>
                     <RelativeLayout
-                        android:id="@+id/relProKenn"
+                        android:id="@+id/relProKen"
                         android:layout_width="match_parent"
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
                         <ImageView
-                            android:id="@+id/imvProKennPlus"
+                            android:id="@+id/imvProKenPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="invisible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
-                            android:id="@+id/imvProKennMinus"
+                            android:id="@+id/imvProKenMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
@@ -625,13 +625,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
-                            android:layout_toRightOf="@+id/imvProKennPlus"
+                            android:layout_toRightOf="@+id/imvProKenPlus"
                             android:text="Produktkenntnisse/Gläserkunde"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
                     <LinearLayout
-                        android:id="@+id/linProKenn"
+                        android:id="@+id/linProKen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -1056,8 +1056,6 @@
 
 
                 </LinearLayout>
-
-
                 <RelativeLayout
                     android:id="@+id/relServ"
                     android:layout_width="match_parent"
@@ -1125,7 +1123,7 @@
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <LinearLayout
-                    android:id="@+id/linKueche"
+                    android:id="@+id/linKue"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:visibility="visible"
@@ -1138,14 +1136,14 @@
                     android:layout_marginLeft="30dp"
                     android:layout_height="20sp">
                     <ImageView
-                        android:id="@+id/imvGaHelPlus"
+                        android:id="@+id/imvGaHePlus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
                         android:visibility="visible"
                         app:srcCompat="@android:drawable/ic_menu_add" />
 
                     <ImageView
-                        android:id="@+id/imvGaHelMinus"
+                        android:id="@+id/imvGaHeMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
                         android:visibility="visible"
@@ -1155,13 +1153,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
-                        android:layout_toRightOf="@+id/imvGaHelPlus"
+                        android:layout_toRightOf="@+id/imvGaHePlus"
                         android:text="Gastrohelfer Bar/Kueche/Lager etc."
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <LinearLayout
-                    android:id="@+id/GaHel"
+                    android:id="@+id/linGaHe"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:visibility="visible"
