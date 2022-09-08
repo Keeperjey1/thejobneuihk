@@ -149,8 +149,8 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         imServMinus = findViewById(R.id.imvServMinus);
         imKuePlus = findViewById(R.id.imvKuePlus);
         imKueMinus = findViewById(R.id.imvKueMinus);
-        imGaHePlus = findViewById(R.id.imvGaHelPlus);
-        imGaHeMinus = findViewById(R.id.imvGaHelMinus);
+        imGaHePlus = findViewById(R.id.imvGaHePlus);
+        imGaHeMinus = findViewById(R.id.imvGaHeMinus);
         imBetLeiPlus = findViewById(R.id.imvBetLeiPlus);
         imBetLeiMinus = findViewById(R.id.imvBetLeiMinus);
         imEveVerPlus = findViewById(R.id.imvEveVerPlus);
@@ -166,7 +166,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         imBueVerPlus = findViewById(R.id.imvBueVerPlus);
         imBueVerMinus = findViewById(R.id.imvBueVerMinus);
 
-        liFaKe = findViewById(R.id.linLayFaehigKenntn);
+        liFaKe = findViewById(R.id.linFaKe);
         liTheBar = findViewById(R.id.linTheBar);
         liTheBarAll = findViewById(R.id.linTheBarAll);
         liZaMiAu = findViewById(R.id.linZaMiAu);
@@ -195,7 +195,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("FaKeMi");
             }});
 
-        imTheBarAllPlus.setOnClickListener(new View.OnClickListener() {
+       imTheBarPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("TheBarPl");
@@ -206,7 +206,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("TheBarMi");
             }});
 
-        imTheBarAllPlus.setOnClickListener(new View.OnClickListener() {
+         imTheBarAllPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("TheBarAllPl");
@@ -264,15 +264,15 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         imServPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linLayOpCl("SerPl");
+                linLayOpCl("ServPl");
             }});
         imServMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linLayOpCl("SerMi");
+                linLayOpCl("ServMi");
             }});
 
-        imKuePlus.setOnClickListener(new View.OnClickListener() {
+       imKuePlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("KuePl");
@@ -283,7 +283,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("KueMi");
             }});
 
-        imGaHePlus.setOnClickListener(new View.OnClickListener() {
+          imGaHePlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("GaHePl");
@@ -294,7 +294,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("GaHeMi");
             }});
 
-        imBetLeiPlus.setOnClickListener(new View.OnClickListener() {
+     imBetLeiPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("BetLeiPl");
@@ -672,22 +672,22 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imTheBarAllMinus.setVisibility(ImageView.GONE);
                 imTheBarAllPlus.setVisibility(ImageView.VISIBLE);
                 break;
-            case "imZaMiAuPl":
+           case "ZaMiAuPl":
                 liZaMiAu.setVisibility(LinearLayout.VISIBLE);
                 imZaMiAuMinus.setVisibility(ImageView.VISIBLE);
                 imZaMiAuPlus.setVisibility(ImageView.GONE);
                 break;
-            case "imZaMiAuMi":
+            case "ZaMiAuMi":
                 liZaMiAu.setVisibility(LinearLayout.GONE);
                 imZaMiAuMinus.setVisibility(ImageView.GONE);
                 imZaMiAuPlus.setVisibility(ImageView.VISIBLE);
                 break;
-            case "imProKenPl":
+            case "ProKenPl":
                 liProKen.setVisibility(LinearLayout.VISIBLE);
                 imProKenMinus.setVisibility(ImageView.VISIBLE);
                 imProKenPlus.setVisibility(ImageView.GONE);
                 break;
-            case "imProKenMi":
+            case "ProKenMi":
                 liProKen.setVisibility(LinearLayout.GONE);
                 imProKenMinus.setVisibility(ImageView.GONE);
                 imProKenPlus.setVisibility(ImageView.VISIBLE);
@@ -712,12 +712,12 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imTheBarPLaMinus.setVisibility(ImageView.GONE);
                 imTheBarPlaPlus.setVisibility(ImageView.VISIBLE);
                 break;
-            case "SerPl":
+           case "ServPl":
                 liServ.setVisibility(LinearLayout.VISIBLE);
                 imServMinus.setVisibility(ImageView.VISIBLE);
                 imServPlus.setVisibility(ImageView.GONE);
                 break;
-            case "SerMi":
+            case "ServMi":
                 liServ.setVisibility(LinearLayout.GONE);
                 imServMinus.setVisibility(ImageView.GONE);
                 imServPlus.setVisibility(ImageView.VISIBLE);
@@ -742,12 +742,12 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imGaHeMinus.setVisibility(ImageView.GONE);
                 imGaHePlus.setVisibility(ImageView.VISIBLE);
                 break;
-            case "BetLeiPl":
+              case "BetLeiPl":
                 liBetLei.setVisibility(LinearLayout.VISIBLE);
                 imBetLeiMinus.setVisibility(ImageView.VISIBLE);
                 imBetLeiPlus.setVisibility(ImageView.GONE);
                 break;
-            case "BetLeiMi":
+             case "BetLeiMi":
                 liBetLei.setVisibility(LinearLayout.GONE);
                 imBetLeiMinus.setVisibility(ImageView.GONE);
                 imBetLeiPlus.setVisibility(ImageView.VISIBLE);
