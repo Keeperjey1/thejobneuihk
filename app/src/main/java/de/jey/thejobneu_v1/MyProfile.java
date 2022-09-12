@@ -104,6 +104,8 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
     ArrayAdapter<String> jobsAdapter;
     ArrayAdapter<String> erfAdapter;
     RequestQueue requestQueue;
+    String urlHome = "http://192.168.0.105/buero/";
+    String urlSchule = "http://192.168.64.150/buero2/";
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
@@ -195,7 +197,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("FaKeMi");
             }});
 
-       imTheBarPlus.setOnClickListener(new View.OnClickListener() {
+        imTheBarPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("TheBarPl");
@@ -206,7 +208,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("TheBarMi");
             }});
 
-         imTheBarAllPlus.setOnClickListener(new View.OnClickListener() {
+        imTheBarAllPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("TheBarAllPl");
@@ -272,7 +274,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("ServMi");
             }});
 
-       imKuePlus.setOnClickListener(new View.OnClickListener() {
+        imKuePlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("KuePl");
@@ -283,7 +285,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("KueMi");
             }});
 
-          imGaHePlus.setOnClickListener(new View.OnClickListener() {
+        imGaHePlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("GaHePl");
@@ -294,7 +296,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 linLayOpCl("GaHeMi");
             }});
 
-     imBetLeiPlus.setOnClickListener(new View.OnClickListener() {
+        imBetLeiPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("BetLeiPl");
@@ -330,7 +332,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         imDirecPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                linLayOpCl("DirecPL");
+                linLayOpCl("DirecPl");
             }});
         imDirecMinus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -343,7 +345,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
             public void onClick(View v) {
                 linLayOpCl("EmpPl");
             }});
-        imEmpPlus.setOnClickListener(new View.OnClickListener() {
+        imEmpMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linLayOpCl("EmpMi");
@@ -449,7 +451,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
             requestQueue.add(jsonObjectRequest);
         }
 
-        if (adapterView.getId() == R.id.spiBraErf && !adapterView.getSelectedItem().toString().equals("")) {
+        if (adapterView.getId() == R.id.spiBraErf && !adapterView.getSelectedItem().toString().equals("Auswahl treffen")) {
             jobList.clear();
             String selectedBranche = spinBranche.getSelectedItem().toString();
             String jobUrl = "http://192.168.64.150/buero2/dropdownjobs2.php?branchenname="+selectedBranche;
@@ -467,7 +469,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                             jobsAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, jobList);
                             jobsAdapter.setDropDownViewResource(R.layout.item_file);
                             spinJobs.setAdapter(jobsAdapter);
-                           // spinJobs2.setAdapter(jobsAdapter);
+                            // spinJobs2.setAdapter(jobsAdapter);
                             //spinJobs3.setAdapter(jobsAdapter);
                         }
                     }catch (JSONException e) {
@@ -499,7 +501,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                             erfAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, erfList);
                             erfAdapter.setDropDownViewResource(R.layout.item_file);
                             spiErfJob.setAdapter(erfAdapter);
-                           // spiErfJob2.setAdapter(erfAdapter);
+                            // spiErfJob2.setAdapter(erfAdapter);
                             //spiErfJob3.setAdapter(erfAdapter);
                         }
                     }catch (JSONException e) {
@@ -513,7 +515,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
             });
             requestQueue.add(jsonObjectRequest);
         }
-        if (adapterView.getId() == R.id.spiJobErf && !adapterView.getSelectedItem().toString().equals("")) {
+        if (adapterView.getId() == R.id.spiJobErf && !adapterView.getSelectedItem().toString().equals("Auswahl treffen")) {
             jobList.clear();
             String selectedBranche = spinBranche.getSelectedItem().toString();
             String jobUrl = "http://192.168.64.150/buero2/dropdownjobs2.php?branchenname="+selectedBranche;
@@ -562,7 +564,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                             erfList.add(bezeichnung);
                             erfAdapter = new ArrayAdapter<>(MyProfile.this, R.layout.item_file, erfList);
                             erfAdapter.setDropDownViewResource(R.layout.item_file);
-                             spiErfJob2.setAdapter(erfAdapter);
+                            spiErfJob2.setAdapter(erfAdapter);
                         }
                     }catch (JSONException e) {
                         e.printStackTrace();
@@ -575,7 +577,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
             });
             requestQueue.add(jsonObjectRequest);
         }
-        if (adapterView.getId() == R.id.spiJobErf2 && !adapterView.getSelectedItem().toString().equals("")) {
+        if (adapterView.getId() == R.id.spiJobErf2 && !adapterView.getSelectedItem().toString().equals("Auswahl treffen")) {
             jobList.clear();
             String selectedBranche = spinBranche.getSelectedItem().toString();
             String jobUrl = "http://192.168.64.150/buero2/dropdownjobs2.php?branchenname="+selectedBranche;
@@ -672,7 +674,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imTheBarAllMinus.setVisibility(ImageView.GONE);
                 imTheBarAllPlus.setVisibility(ImageView.VISIBLE);
                 break;
-           case "ZaMiAuPl":
+            case "ZaMiAuPl":
                 liZaMiAu.setVisibility(LinearLayout.VISIBLE);
                 imZaMiAuMinus.setVisibility(ImageView.VISIBLE);
                 imZaMiAuPlus.setVisibility(ImageView.GONE);
@@ -712,7 +714,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imTheBarPLaMinus.setVisibility(ImageView.GONE);
                 imTheBarPlaPlus.setVisibility(ImageView.VISIBLE);
                 break;
-           case "ServPl":
+            case "ServPl":
                 liServ.setVisibility(LinearLayout.VISIBLE);
                 imServMinus.setVisibility(ImageView.VISIBLE);
                 imServPlus.setVisibility(ImageView.GONE);
@@ -742,12 +744,12 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imGaHeMinus.setVisibility(ImageView.GONE);
                 imGaHePlus.setVisibility(ImageView.VISIBLE);
                 break;
-              case "BetLeiPl":
+            case "BetLeiPl":
                 liBetLei.setVisibility(LinearLayout.VISIBLE);
                 imBetLeiMinus.setVisibility(ImageView.VISIBLE);
                 imBetLeiPlus.setVisibility(ImageView.GONE);
                 break;
-             case "BetLeiMi":
+            case "BetLeiMi":
                 liBetLei.setVisibility(LinearLayout.GONE);
                 imBetLeiMinus.setVisibility(ImageView.GONE);
                 imBetLeiPlus.setVisibility(ImageView.VISIBLE);
@@ -762,7 +764,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imEveVerMinus.setVisibility(ImageView.GONE);
                 imEveVerPlus.setVisibility(ImageView.VISIBLE);
                 break;
-            case "FuBPL":
+            case "FuBPl":
                 liFuB.setVisibility(LinearLayout.VISIBLE);
                 imFuBMinus.setVisibility(ImageView.VISIBLE);
                 imFuBPlus.setVisibility(ImageView.GONE);
@@ -802,7 +804,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 imHouKeeMinus.setVisibility(ImageView.GONE);
                 imHouKeePlus.setVisibility(ImageView.VISIBLE);
                 break;
-            case "BueVerPL":
+            case "BueVerPl":
                 liBueVer.setVisibility(LinearLayout.VISIBLE);
                 imBueVerMinus.setVisibility(ImageView.VISIBLE);
                 imBueVerPlus.setVisibility(ImageView.GONE);
@@ -823,10 +825,8 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
     }
    /* public void openFaehigkeiten(View view) {
         linLayFaehig.setVisibility(LinearLayout.VISIBLE);
-
     }*/
    /* public void closeFaehigkeiten(View view) {
         linLayFaehig.setVisibility(LinearLayout.GONE);
-
     }*/
 }
