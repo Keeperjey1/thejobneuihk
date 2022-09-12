@@ -337,14 +337,14 @@
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
                         <ImageView
-                            android:id="@+id/imvTheBarAllgPlus"
+                            android:id="@+id/imvTheBarAllPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="invisible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
-                            android:id="@+id/imvTheBarAllgMinus"
+                            android:id="@+id/imvTheBarAllMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
@@ -355,7 +355,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
-                            android:layout_toRightOf="@+id/imvTheBarAllgPlus"
+                            android:layout_toRightOf="@+id/imvTheBarAllPlus"
                             android:text="Theke/BAr Allgemein"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -449,14 +449,14 @@
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
                         <ImageView
-                            android:id="@+id/imZaMiAuPlus"
+                            android:id="@+id/imvZaMiAuPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
-                            android:id="@+id/imZaMiAuMinus"
+                            android:id="@+id/imvZaMiAuMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
@@ -467,7 +467,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
-                            android:layout_toRightOf="@+id/imZaMiAuPlus"
+                            android:layout_toRightOf="@+id/imvZaMiAuPlus"
                             android:text="Zapfen/Mixen/Ausgabe etc."
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -607,14 +607,14 @@
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
                         <ImageView
-                            android:id="@+id/imvProKennPlus"
+                            android:id="@+id/imvProKenPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="invisible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
-                            android:id="@+id/imvProKennMinus"
+                            android:id="@+id/imvProKenMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
                             android:visibility="visible"
@@ -625,7 +625,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
-                            android:layout_toRightOf="@+id/imvProKennPlus"
+                            android:layout_toRightOf="@+id/imvProKenPlus"
                             android:text="Produktkenntnisse/Gläserkunde"
                             android:textSize="16sp"
                             android:textStyle="bold" />
