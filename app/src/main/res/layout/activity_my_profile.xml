@@ -141,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -201,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -261,7 +261,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RelativeLayout
-                android:id="@+id/relFaehigKenntn"
+                android:id="@+id/relFaKe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
@@ -279,7 +279,7 @@
                     app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                 <TextView
-                    android:id="@+id/tvFaehigkeiten"
+                    android:id="@+id/tvFaKe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -288,12 +288,12 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </RelativeLayout>
-            <!--               LinFaehKenn-->
+            <!--               LinFaKe-->
             <LinearLayout
-                android:id="@+id/linLayFaehigKenntn"
+                android:id="@+id/linFaKe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:orientation="vertical">
                 <RelativeLayout
                     android:id="@+id/relTheBar"
@@ -304,14 +304,14 @@
                         android:id="@+id/imvTheBarPlus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         app:srcCompat="@android:drawable/ic_menu_add" />
 
                     <ImageView
                         android:id="@+id/imvTheBarMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                     <TextView
@@ -329,10 +329,10 @@
                     android:id="@+id/linTheBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
                     <RelativeLayout
-                        android:id="@+id/relTheBarAllg"
+                        android:id="@+id/relTheBarAll"
                         android:layout_width="match_parent"
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
@@ -340,14 +340,14 @@
                             android:id="@+id/imvTheBarAllPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="invisible"
+                            android:visibility="visible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
                             android:id="@+id/imvTheBarAllMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                         <TextView
@@ -361,11 +361,11 @@
                             android:textStyle="bold" />
                     </RelativeLayout>
                     <LinearLayout
-                        android:id="@+id/linTheBarAllg"
+                        android:id="@+id/linTheBarAll"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -459,11 +459,11 @@
                             android:id="@+id/imvZaMiAuMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                         <TextView
-                            android:id="@+id/tvCockMix"
+                            android:id="@+id/tvZaMiAu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -477,7 +477,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -602,7 +602,7 @@
 
                     </LinearLayout>
                     <RelativeLayout
-                        android:id="@+id/relProKenn"
+                        android:id="@+id/relProKen"
                         android:layout_width="match_parent"
                         android:layout_marginLeft="30dp"
                         android:layout_height="wrap_content">
@@ -610,14 +610,14 @@
                             android:id="@+id/imvProKenPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="invisible"
+                            android:visibility="visible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
                             android:id="@+id/imvProKenMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                         <TextView
@@ -631,11 +631,11 @@
                             android:textStyle="bold" />
                     </RelativeLayout>
                     <LinearLayout
-                        android:id="@+id/linProKenn"
+                        android:id="@+id/linProKen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -838,14 +838,14 @@
                             android:id="@+id/imvTheBarLeiPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="invisible"
+                            android:visibility="visible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
                             android:id="@+id/imvTheBarLeiMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                         <TextView
@@ -863,7 +863,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -950,14 +950,14 @@
                             android:id="@+id/imvTheBarPlaPlus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="invisible"
+                            android:visibility="visible"
                             app:srcCompat="@android:drawable/ic_menu_add" />
 
                         <ImageView
                             android:id="@+id/imvTheBarPlaMinus"
                             android:layout_width="25sp"
                             android:layout_height="25sp"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                         <TextView
@@ -975,7 +975,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1056,8 +1056,6 @@
 
 
                 </LinearLayout>
-
-
                 <RelativeLayout
                     android:id="@+id/relServ"
                     android:layout_width="match_parent"
@@ -1074,7 +1072,7 @@
                         android:id="@+id/imvServMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                     <TextView
@@ -1091,7 +1089,7 @@
                     android:id="@+id/linServ"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1111,7 +1109,7 @@
                         android:id="@+id/imvKueMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
 
                     <TextView
@@ -1125,46 +1123,46 @@
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <LinearLayout
-                    android:id="@+id/linKueche"
+                    android:id="@+id/linKue"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
                 <RelativeLayout
-                    android:id="@+id/relGaHel"
+                    android:id="@+id/relGaHe"
                     android:layout_width="match_parent"
                     android:layout_marginLeft="30dp"
                     android:layout_height="20sp">
                     <ImageView
-                        android:id="@+id/imvGaHelPlus"
+                        android:id="@+id/imvGaHePlus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
                         android:visibility="visible"
                         app:srcCompat="@android:drawable/ic_menu_add" />
 
                     <ImageView
-                        android:id="@+id/imvGaHelMinus"
+                        android:id="@+id/imvGaHeMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
-                        android:id="@+id/tvGaHel"
+                        android:id="@+id/tvGaHe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
-                        android:layout_toRightOf="@+id/imvGaHelPlus"
+                        android:layout_toRightOf="@+id/imvGaHePlus"
                         android:text="Gastrohelfer Bar/Kueche/Lager etc."
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <LinearLayout
-                    android:id="@+id/GaHel"
+                    android:id="@+id/linGaHe"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1184,7 +1182,7 @@
                         android:id="@+id/imvBetLeiMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
                         android:id="@+id/tvBetLei"
@@ -1200,7 +1198,7 @@
                     android:id="@+id/linBetLei"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1220,7 +1218,7 @@
                         android:id="@+id/imvEveVerMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
                         android:id="@+id/tvEveVer"
@@ -1236,7 +1234,7 @@
                     android:id="@+id/linEveVer"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1256,7 +1254,7 @@
                         android:id="@+id/imvFuBMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
                         android:id="@+id/tvFuB"
@@ -1272,7 +1270,7 @@
                     android:id="@+id/linFuB"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1292,7 +1290,7 @@
                         android:id="@+id/imvDirecMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
                         android:id="@+id/tvDirec"
@@ -1308,7 +1306,7 @@
                     android:id="@+id/linDirec"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1328,7 +1326,7 @@
                         android:id="@+id/imvEmpMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
                         android:id="@+id/tvEmp"
@@ -1344,7 +1342,7 @@
                     android:id="@+id/linEmp"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1364,7 +1362,7 @@
                         android:id="@+id/imvHouKeeMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
                         android:id="@+id/tvHouKee"
@@ -1380,7 +1378,7 @@
                     android:id="@+id/linHouKee"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -1400,7 +1398,7 @@
                         android:id="@+id/imvBueVerMinus"
                         android:layout_width="25sp"
                         android:layout_height="25sp"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         app:srcCompat="@android:drawable/dialog_holo_light_frame" />
                     <TextView
                         android:id="@+id/tvBueVer"
@@ -1416,7 +1414,7 @@
                     android:id="@+id/linBueVer"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                 </LinearLayout>
