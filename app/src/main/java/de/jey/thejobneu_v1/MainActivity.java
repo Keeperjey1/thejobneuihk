@@ -4,6 +4,7 @@ package de.jey.thejobneu_v1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     EditText u_name, u_surname, u_age, u_username, u_password;
     String method;
     String name, surname, age, username, password;
+
     // global variables
     private List<JobOffer> list;
     private JobOfferAdapter adapter;
@@ -73,11 +75,11 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for(int i = 0; i<array.length(); i++) {
                         JSONObject object = array.getJSONObject(i);
-                        list.add(new JobOffer(object.getString("beruf"),
+                        list.add(new JobOffer(object.getString("id"),
+                                object.getString("beruf"),
                                 object.getString("betriebsart"),
                                 object.getString("ort"),
                                 object.getString("verfuegbarkeit")));
-
                     }
                     adapter.notifyDataSetChanged();
                 } catch (Exception e) {
@@ -85,16 +87,13 @@ public class MainActivity extends AppCompatActivity {
                     alertDialog.setTitle("Kuna tatizo limetokea");
                     alertDialog.setMessage("tatizo: " + e.getMessage());
                     alertDialog.show();
-
                 }
-
             }
         },new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 dialog.dismiss();
                 DisplayError("jaribu tena baadae");
-
             }
         });
         Volley.newRequestQueue(this).add(request);
@@ -138,10 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void startActivity(Intent intent) {
-        super.startActivity(intent);
-    }
+
 
 
     @Override
