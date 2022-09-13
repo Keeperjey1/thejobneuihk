@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         adapter = new JobOfferAdapter(this, list);
         //format recycle view
-        recyclerView.setHasFixedSize(true);
+       // recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+       // recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         final ProgressDialog dialog = new ProgressDialog(this);
         dialog.setMessage("tafadhari subiri, inatafut...");

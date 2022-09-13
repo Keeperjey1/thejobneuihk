@@ -22,7 +22,7 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.JobOff
     @NonNull
     @Override
     public JobOfferViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.contens, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.card_view, parent, false);
         JobOfferViewHolder jh = new JobOfferViewHolder(view);
         return jh;
     }
