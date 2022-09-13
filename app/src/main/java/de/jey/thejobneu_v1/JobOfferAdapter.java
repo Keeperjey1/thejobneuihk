@@ -22,13 +22,14 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.JobOff
     @NonNull
     @Override
     public JobOfferViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.contens, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.cardview, parent, false);
         JobOfferViewHolder jh = new JobOfferViewHolder(view);
         return jh;
     }
     @Override
     public void onBindViewHolder(@NonNull JobOfferViewHolder holder,int position) {
         JobOffer jobOffer = jobOfferList.get(position);
+        holder.id.setText(jobOffer.getId());
         holder.Beruf.setText(jobOffer.getBeruf());
         holder.Betriebsart.setText(jobOffer.getBetriebsart());
         holder.Ort.setText(jobOffer.getOrt());
@@ -41,11 +42,12 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.JobOff
     }
 
     public static class JobOfferViewHolder extends RecyclerView.ViewHolder {
-        TextView Beruf, Betriebsart, Ort, Verfuegbarkeit;
+        TextView id, Beruf, Betriebsart, Ort, Verfuegbarkeit;
         // ImageView avatar;
 
         public JobOfferViewHolder(@NonNull View itemView) {
             super(itemView);
+            id = itemView.findViewById(R.id.tvJobOfferId);
             Beruf = itemView.findViewById(R.id.tvBeruf);
             Betriebsart = itemView.findViewById(R.id.tvBetriebsart);
             Ort = itemView.findViewById(R.id.tvOrt);

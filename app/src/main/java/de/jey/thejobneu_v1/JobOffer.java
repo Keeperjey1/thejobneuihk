@@ -3,16 +3,21 @@ package de.jey.thejobneu_v1;
 import java.util.SplittableRandom;
 
 public class JobOffer {
+    private String id;
     private String beruf;
     private String betriebsart;
     private String ort;
     private String verfuegbarkeit;
-    public JobOffer(String beruf, String betriebsart, String ort, String verfuegbarkeit) {
+    public JobOffer(String id, String beruf, String betriebsart, String ort, String verfuegbarkeit) {
+        this.id = id;
         this.beruf = beruf;
         this.betriebsart = betriebsart;
         this.ort =ort;
         this.verfuegbarkeit = verfuegbarkeit;
     }
+    public String getId() {return id;}
+
+    public void setId(String id) {this.id = id;}
 
     public String getBeruf() {
         return beruf;

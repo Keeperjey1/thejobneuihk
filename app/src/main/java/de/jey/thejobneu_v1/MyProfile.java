@@ -3,6 +3,7 @@ package de.jey.thejobneu_v1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -95,6 +96,8 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
     ImageView imHouKeeMinus;
     ImageView imBueVerPlus;
     ImageView imBueVerMinus;
+    Button vorAnz;
+    Button prosave;
 
 
     ArrayList<String> brancheList = new ArrayList<>();
@@ -185,6 +188,9 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         liEmp = findViewById(R.id.linEmp);
         liHouKee = findViewById(R.id.linHouKee);
         liBueVer = findViewById(R.id.linBueVer);
+
+        vorAnz = findViewById(R.id.btnVorAnz);
+        prosave = findViewById(R.id.btnProSav);
 
         imFaKePlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -817,11 +823,20 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         }
     }
 
+
+
+
     public void waehleJob2(View view) {
         layoutJob2.setVisibility(LinearLayout.VISIBLE);
     }
     public void waehleJob3(View view) {
         layoutJob3.setVisibility(LinearLayout.VISIBLE);
+    }
+    public void vorschauAnzeigen(View view) {
+        setContentView(R.layout.profilvorschau);
+    }
+    public void safeProfile(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
    /* public void openFaehigkeiten(View view) {
         linLayFaehig.setVisibility(LinearLayout.VISIBLE);

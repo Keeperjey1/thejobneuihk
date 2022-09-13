@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for(int i = 0; i<array.length(); i++) {
                         JSONObject object = array.getJSONObject(i);
-                        list.add(new JobOffer(object.getString("beruf"),
+                        list.add(new JobOffer(object.getString("id"),
+                                object.getString("beruf"),
                                 object.getString("betriebsart"),
                                 object.getString("ort"),
                                 object.getString("verfuegbarkeit")));
