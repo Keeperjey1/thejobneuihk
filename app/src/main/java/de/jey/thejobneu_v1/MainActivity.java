@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         adapter = new JobOfferAdapter(this, list);
         //format recycle view
-       // recyclerView.setHasFixedSize(true);
+        // recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-       // recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        // recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         final ProgressDialog dialog = new ProgressDialog(this);
         dialog.setMessage("tafadhari subiri, inatafut...");
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
         //receive data from php file
-        final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchbuero2.php",new Response.Listener<String>() {
+        final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchbuero22.php",new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 dialog.dismiss();
@@ -75,11 +75,11 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for(int i = 0; i<array.length(); i++) {
                         JSONObject object = array.getJSONObject(i);
-                        list.add(new JobOffer(object.getString("id"),
-                                object.getString("beruf"),
-                                object.getString("betriebsart"),
-                                object.getString("ort"),
-                                object.getString("verfuegbarkeit")));
+                        list.add(new JobOffer(object.getString("joboffer.id_joboffer"),
+                                object.getString("beruf.bezeichnung"),
+                                object.getString("betriebsart.bezeichnung"),
+                                object.getString("ort.ortsname"),
+                                object.getString("verfuegbarkeit.bezeichnung")));
                     }
                     adapter.notifyDataSetChanged();
                 } catch (Exception e) {
