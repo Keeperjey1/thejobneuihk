@@ -33,7 +33,7 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.JobOff
     @Override
     public void onBindViewHolder(@NonNull JobOfferViewHolder holder,int position) {
         JobOffer jobOffer = jobOfferList.get(position);
-        holder.id.setText(jobOffer.getId());
+       // holder.id.setText(jobOffer.getId());
         holder.Beruf.setText(jobOffer.getBeruf());
         holder.Betriebsart.setText(jobOffer.getBetriebsart());
         holder.Ort.setText(jobOffer.getOrt());
@@ -47,7 +47,8 @@ public class JobOfferAdapter extends RecyclerView.Adapter<JobOfferAdapter.JobOff
                 intent.putExtra("id", jobOffer.getId());
                 intent.putExtra("beruf", jobOffer.getBeruf());
                 intent.putExtra("betriebsart", jobOffer.getBetriebsart());
-                intent.putExtra("ort", jobOffer.getOrt());
+                intent.putExtra("ort",
+                        jobOffer.getOrt());
                 intent.putExtra("verfuegbarkeit", jobOffer.getVerfuegbarkeit());
                 context.startActivity(intent);
 

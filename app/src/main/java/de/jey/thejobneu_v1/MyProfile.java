@@ -25,6 +25,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -99,7 +100,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
     Button vorAnz;
     Button prosave;
 
-
+    Array showJobOffer;
     ArrayList<String> brancheList = new ArrayList<>();
     ArrayList<String> jobList = new ArrayList<>();
     ArrayList<String> erfList = new ArrayList<>();
@@ -387,6 +388,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         //String jobsUrl = "http://192.168.64.150/buero/dropdownjobs.php";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                 brancheUrl, null, new Response.Listener<JSONObject>() {
+            
             @Override
             public void onResponse(JSONObject response) {
                 try {
@@ -402,7 +404,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }
-
+                
             }
         }, new Response.ErrorListener() {
             @Override
