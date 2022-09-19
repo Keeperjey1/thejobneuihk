@@ -1,11 +1,7 @@
 package de.jey.thejobneu_v1;
 
-
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,18 +12,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,27 +24,31 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-    EditText pas, usr;
-    EditText u_name, u_surname, u_age, u_username, u_password;
-    String method;
-    String name, surname, age, username, password;
+public class ShowJobOfferDetails extends AppCompatActivity {
 
     // global variables
     private List<JobOffer> list;
-    private JobOfferAdapter adapter;
+    private JobOfferDetailsAdapter adapter;
     private RecyclerView recyclerView;
+    private String id5;
+
+    public String setId5(String id) {
+        id5 = id;
+        return id5;
+    }
+
     // RelativeLayout errorLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_show_job_offer);
         // errorLayout = findViewById(R.id.errorLayout);
         //initialize adapter
-        recyclerView = findViewById(R.id.recyclerViewJobs);
+        recyclerView = findViewById(R.id.recyclerViewJobOfferDetails);
         list = new ArrayList<>();
-        adapter = new JobOfferAdapter(this, list);
+        adapter = new JobOfferDetailsAdapter(this, list);
         //format recycle view
         // recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
@@ -68,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
 
         //receive data from php file
-        final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchJobOffer.php",new Response.Listener<String>() {
+        //String selectedId = getIntent()
+       // intent.putExtra("id", jobOffer.getId());
+        final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchbuero22.php",new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 dialog.dismiss();
@@ -102,41 +97,8 @@ public class MainActivity extends AppCompatActivity {
     void DisplayError(String putErroer) {
         // Snackbar.make(errorLayout, putErroer, Snackbar.LENGTH_LONG).show();
     }
-    public void login(View view) {
-        pas = findViewById(R.id.edtPassword);
-        usr = findViewById(R.id.edtUsername);
-
-        String user = usr.getText().toString();
-        String pass = pas.getText().toString();
-
-        Login ul = new Login(this);
-        ul.execute(user, pass);
-        //startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
-    public void register(View view) {
-        u_name = findViewById(R.id.edtName);
-        u_surname = findViewById(R.id.edtSurname);
-        u_age = findViewById(R.id.edtAge);
-        u_username = findViewById(R.id.edtUsername);
-        u_password = findViewById(R.id.edtPassword);
-
-        name = u_name.getText().toString();
-        surname = u_surname.getText().toString();
-        age = u_age.getText().toString();
-        username = u_username.getText().toString();
-        password = u_password.getText().toString();
 
 
-        method = "register";
-        Register reg = new Register(this);
-        reg.execute(new Runnable() {
-            @Override
-            public void run() {
-                reg.doInBackground(method, name, surname, age, username, password);
-            }
-        });
-
-    }
 
 
 
