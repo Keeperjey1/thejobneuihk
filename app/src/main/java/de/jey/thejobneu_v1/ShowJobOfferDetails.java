@@ -1,135 +1,102 @@
 package de.jey.thejobneu_v1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.widget.TextView;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
 
-public class ShowJobOfferDetails extends AppCompatActivity {
-
-    // global variables
-    private List<JobOffer> list;
-    private JobOfferDetailsAdapter adapter;
-    private RecyclerView recyclerView;
-    private String id5;
-
-    public String setId5(String id) {
-        id5 = id;
-        return id5;
-    }
-
-    // RelativeLayout errorLayout;
-
+public class ShowJobOfferDetails extends AppCompatActivity{
+    TextView tvId, tvBeruf, tvBetriebsart, tvOrt, tvVerfuegbarkeit;
+    private String strJson, apiUrl = "http://192.168.64.150/buero2/fetchbuero22.php?selectedId=";
+    private OkHttpClient client;
+    private Response response;
+    private RequestBody requestBody;
+    private Request request;
+    private ProgressDialog dialog;
+    String selectedId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_job_offer);
-        // errorLayout = findViewById(R.id.errorLayout);
-        //initialize adapter
-        recyclerView = findViewById(R.id.recyclerViewJobOfferDetails);
-        list = new ArrayList<>();
-        adapter = new JobOfferDetailsAdapter(this, list);
-        //format recycle view
-        // recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        // recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        setContentView(R.layout.activity_show_job_offer_details);
+        dialog = new ProgressDialog(this);
+        dialog.setTitle("Please Wait....");
+        dialog.setCanceledOnTouchOutside(true);
 
-        final ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setMessage("tafadhari subiri, inatafut...");
-        dialog.setCanceledOnTouchOutside(false);
+        tvId = findViewById(R.id.tvShowId);
+        tvBeruf = findViewById(R.id.tvShowBeruf);
+        tvBetriebsart = findViewById(R.id.tvShowBetriebsart);
+        tvOrt = findViewById(R.id.tvShowOrt);
+        tvVerfuegbarkeit = findViewById(R.id.tvShowVerfuegbarkeit);
         dialog.show();
 
-        //receive data from php file
-        //String selectedId = getIntent()
-       // intent.putExtra("id", jobOffer.getId());
-        final StringRequest request = new StringRequest("http://192.168.64.150/buero2/fetchbuero22.php",new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                dialog.dismiss();
-                try {
-                    JSONArray array = new JSONArray(response);
-                    for(int i = 0; i<array.length(); i++) {
-                        JSONObject object = array.getJSONObject(i);
-                        list.add(new JobOffer(object.getString("joboffer.id_joboffer"),
-                                object.getString("beruf.bezeichnung"),
-                                object.getString("betriebsart.bezeichnung"),
-                                object.getString("ort.ortsname"),
-                                object.getString("verfuegbarkeit.bezeichnung")));
-                    }
-                    adapter.notifyDataSetChanged();
-                } catch (Exception e) {
-                    AlertDialog alertDialog = new AlertDialog.Builder(getApplicationContext()).create();
-                    alertDialog.setTitle("Kuna tatizo limetokea");
-                    alertDialog.setMessage("tatizo: " + e.getMessage());
-                    alertDialog.show();
-                }
+        client = new OkHttpClient();
+        new GetUserDataRequest().execute();
+    }
+
+    public class GetUserDataRequest extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+           // DbTransfer.id = "1";
+            selectedId = DbTransfer.id;
+            request = new Request.Builder().url(apiUrl+selectedId).build();
+            try {
+                response = client.newCall(request).execute();
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        },new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                dialog.dismiss();
-                DisplayError("jaribu tena baadae");
-            }
-        });
-        Volley.newRequestQueue(this).add(request);
-    }
-    void DisplayError(String putErroer) {
-        // Snackbar.make(errorLayout, putErroer, Snackbar.LENGTH_LONG).show();
-    }
+            return null;
 
-
-
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
-    }
-
-
-
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.itLogin:
-                setContentView(R.layout.login);
-                return true;
-            case R.id.itRegister:
-                setContentView(R.layout.register);
-                return true;
-            case R.id.itProfile:
-                startActivity(new Intent(getApplicationContext(), MyProfile.class));
-                return true;
-            case R.id.itLogout:
-                finish();
-                return true;
-            case R.id.itMain:
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                return true;
         }
-        return super.onOptionsItemSelected(item);
+
+        @Override
+        protected void onPostExecute(Void unused) {
+            super.onPostExecute(unused);
+            try {
+                strJson = response.body().string();
+                updateUserData(strJson);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void updateUserData(String strJson) {
+
+
+        try {
+            JSONArray parent = new JSONArray(strJson);
+            JSONObject child = parent.getJSONObject(0);
+            String id = child.getString("joboffer.id_joboffer");
+            String beruf = child.getString("beruf.bezeichnung");
+            String betriebsart = child.getString("betriebsart.bezeichnung");
+            String ort = child.getString("ort.ortsname");
+            String verfuegbarkeit = child.getString("verfuegbarkeit.bezeichnung");
+
+            tvId.setText(id);
+            tvBeruf.setText(beruf);
+            tvBetriebsart.setText(betriebsart);
+            tvOrt.setText(ort);
+            tvVerfuegbarkeit.setText(verfuegbarkeit);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
