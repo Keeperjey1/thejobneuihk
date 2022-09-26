@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ShowJobOfferDetails"
-    android:id="@+id/scrollView"
+    tools:context=".ProfilVorschau"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_editor_absoluteX="1dp"
@@ -14,63 +13,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
-
         <TextView
-            android:id="@+id/tvShowJobOffer"
+            android:id="@+id/tvProfilname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="Ihr ausgewähltes Jobangebot"
+            android:text="Überprüfen Sie Ihre Angaben"
             android:textSize="20sp"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/tvShowId"
+            android:id="@+id/tvVorProfilname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:hint="Id"
-            android:minWidth="180dp"
+            android:hint="Profilname"
             android:minHeight="48dp"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvShowBeruf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:hint="Beruf"
             android:minWidth="180dp"
-            android:minHeight="48dp"
-            android:textSize="20sp" />
-        <TextView
-            android:id="@+id/tvShowBetriebsart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:hint="Betriebsart"
-            android:minWidth="180dp"
-            android:minHeight="48dp"
-            android:textSize="20sp" />
-        <TextView
-            android:id="@+id/tvShowOrt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:hint="Ort"
-            android:minWidth="180dp"
-            android:minHeight="48dp"
-            android:textSize="20sp" />
-        <TextView
-            android:id="@+id/tvShowVerfuegbarkeit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:hint="Verfuegbarkeit"
-            android:minWidth="180dp"
-            android:minHeight="48dp"
-            android:textSize="20sp" />
-
+            android:textSize="20sp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,11 +45,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Branche"
+                    android:text="Ihre Branche"
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowBraAusw"
+                    android:id="@+id/tvVorBraAusw"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -107,11 +67,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="gesuchte Erfahrung"
+                    android:text="Deine Erfahrung"
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowBraErf"
+                    android:id="@+id/tvVorBraErf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -122,11 +82,182 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/vorLayoutJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Deine Jobauswahl"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvVorJobAus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Dein Job"
+                        android:minHeight="48dp"
+                        android:minWidth="180dp"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Deine Erfahrung"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvVorJobErf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Erfahrung"
+                        android:minHeight="48dp"
+                        android:minWidth="180dp"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/vorLayoutJob2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Deine Jobauswahl"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvVorJobAus2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Jobauswahl"
+                        android:minHeight="48dp"
+                        android:minWidth="180dp"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Deine Erfahrung"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvVorJObErf2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Erfahrung"
+                        android:minHeight="48dp"
+                        android:minWidth="180dp"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/VorLayoutJob3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Deine Jobauswahl"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvVorJobAus3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Dein Job"
+                        android:minHeight="48dp"
+                        android:minWidth="180dp"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Deine Erfahrung"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvVorJobErf3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:hint="Erfahrung"
+                        android:minHeight="48dp"
+                        android:minWidth="180dp"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/tvShowFaKe"
+                android:id="@+id/tvVorFaKe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -134,13 +265,13 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
             <LinearLayout
-                android:id="@+id/linShowTheBar"
+                android:id="@+id/linVorTheBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowTheBar"
+                    android:id="@+id/tvVorTheBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -148,13 +279,13 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <LinearLayout
-                    android:id="@+id/linShowTheBarAll"
+                    android:id="@+id/linVorTheBarAll"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility="visible">
                     <TextView
-                        android:id="@+id/tvShowTheBarAll"
+                        android:id="@+id/tvVorTheBarAll"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
@@ -180,11 +311,11 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                             <TextView
-                                android:id="@+id/tvShowTheBArAllErf"
+                                android:id="@+id/tvVorTheBArAllErf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
-                                android:hint="Deine Erfahrung"
+                                android:hint="Dein Job"
                                 android:minHeight="48dp"
                                 android:minWidth="180dp"
                                 android:textSize="20sp"/>
@@ -198,15 +329,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
-                                android:text="wähle Deine Level"
+                                android:text="Deine Jobauswahl"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                             <TextView
-                                android:id="@+id/tvShowTheBarAllLev"
+                                android:id="@+id/tvVorTheBarAllLev"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
-                                android:hint="Dein Level"
+                                android:hint="Dein Job"
                                 android:minHeight="48dp"
                                 android:minWidth="180dp"
                                 android:textSize="20sp"/>
@@ -221,7 +352,7 @@
                     android:orientation="vertical"
                     android:visibility="visible">
                     <TextView
-                        android:id="@+id/tvShowZaMiAu"
+                        android:id="@+id/tvVorZaMiAu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
@@ -243,7 +374,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvShowZaMiAuBiZaLevel"
+                            android:id="@+id/tvVorZaMiAuBiZaLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -270,7 +401,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvShowZaMiAuCockLevel"
+                            android:id="@+id/tvVorZaMiAuCockLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -297,7 +428,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvShowZaMiAuAndLevel"
+                            android:id="@+id/tvVorZaMiAuAndLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -324,7 +455,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvShowZaMiAuAusgLevel"
+                            android:id="@+id/tvVorZaMiAuAusgLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -339,7 +470,7 @@
 
                 </LinearLayout>
                 <LinearLayout
-                    android:id="@+id/linShowProKen"
+                    android:id="@+id/linVorProKen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -367,7 +498,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvShowProKenBiLevel"
+                            android:id="@+id/tvVorProKenBiLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -393,7 +524,7 @@
                             android:textSize="24sp"
                             android:textStyle="bold" />
                         <TextView
-                            android:id="@+id/tvShowProKenWeiLevel"
+                            android:id="@+id/tvVorProKenWeiLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -420,7 +551,7 @@
                             android:textSize="24sp"
                             android:textStyle="bold" />
                         <TextView
-                            android:id="@+id/tvShowProKenGinLevel"
+                            android:id="@+id/tvVorProKenGinLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -447,7 +578,7 @@
                             android:textSize="24sp"
                             android:textStyle="bold" />
                         <TextView
-                            android:id="@+id/tvShowProKenWhyLevel"
+                            android:id="@+id/tvVorProKenWhyLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -474,7 +605,7 @@
                             android:textSize="24sp"
                             android:textStyle="bold" />
                         <TextView
-                            android:id="@+id/tvShowProKenRumLevel"
+                            android:id="@+id/tvVorProKenRumLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -501,7 +632,7 @@
                             android:textSize="24sp"
                             android:textStyle="bold" />
                         <TextView
-                            android:id="@+id/tvShowProKenAndLevel"
+                            android:id="@+id/tvVorProKenAndLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -530,7 +661,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvShowProKenGlaLevel"
+                            android:id="@+id/tvVorProKenGlaLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -551,7 +682,7 @@
                     android:orientation="vertical"
                     android:visibility="visible">
                     <TextView
-                        android:id="@+id/tvShowTheBarLei"
+                        android:id="@+id/tvVorTheBarLei"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
@@ -575,7 +706,7 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                             <TextView
-                                android:id="@+id/tvShowTheBarLeiErf"
+                                android:id="@+id/tvVorTheBarLeiErf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
@@ -597,7 +728,7 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                             <TextView
-                                android:id="@+id/tvShowTheBarLeiLev"
+                                android:id="@+id/tvVorTheBarLeiLev"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
@@ -616,7 +747,7 @@
                     android:orientation="vertical"
                     android:visibility="visible">
                     <TextView
-                        android:id="@+id/tvShowTheBarPla"
+                        android:id="@+id/tvVorTheBarPla"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
@@ -641,7 +772,7 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                             <TextView
-                                android:id="@+id/tvShowTheBarPlaErf"
+                                android:id="@+id/tvVorTheBarPlaErf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
@@ -663,7 +794,7 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                             <TextView
-                                android:id="@+id/tvShowTheBarPlaLev"
+                                android:id="@+id/tvVorTheBarPlaLev"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="15dp"
@@ -685,7 +816,7 @@
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowServ"
+                    android:id="@+id/tvVorServ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -693,7 +824,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ1"
+                    android:id="@+id/tvVorServ1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -703,13 +834,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowKue"
+                android:id="@+id/linVorKue"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowKue"
+                    android:id="@+id/tvVorKue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -717,7 +848,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ2"
+                    android:id="@+id/tvVorServ2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -727,13 +858,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowGaHe"
+                android:id="@+id/linVorGaHe"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowGaHe"
+                    android:id="@+id/tvVorGaHe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -741,7 +872,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ3"
+                    android:id="@+id/tvVorServ3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -751,13 +882,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowBetLei"
+                android:id="@+id/linVorBetLei"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowBetLei"
+                    android:id="@+id/tvVorBetLei"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -765,7 +896,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ4"
+                    android:id="@+id/tvVorServ4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -775,13 +906,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowEveVer"
+                android:id="@+id/linVorEveVer"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowEveVer"
+                    android:id="@+id/tvVorEveVer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -789,7 +920,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ5"
+                    android:id="@+id/tvVorServ5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -799,13 +930,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowFuB"
+                android:id="@+id/linVorFuB"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowFuB"
+                    android:id="@+id/tvVorFuB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -813,7 +944,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ6"
+                    android:id="@+id/tvVorServ6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -823,13 +954,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowDirec"
+                android:id="@+id/linVorDirec"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowDirec"
+                    android:id="@+id/tvVorDirec"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -837,7 +968,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ7"
+                    android:id="@+id/tvVorServ7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -847,13 +978,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowEmp"
+                android:id="@+id/linVorEmp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowEmp"
+                    android:id="@+id/tvVorEmp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -861,7 +992,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ8"
+                    android:id="@+id/tvVorServ8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -871,13 +1002,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowHouKee"
+                android:id="@+id/linVorHouKee"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowHouKee"
+                    android:id="@+id/tvVorHouKee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -885,7 +1016,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ9"
+                    android:id="@+id/tvVorServ9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -895,13 +1026,13 @@
 
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/linShowBueVer"
+                android:id="@+id/linVorBueVer"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:visibility="gone"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvShowBueVer"
+                    android:id="@+id/tvVorBueVer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -909,7 +1040,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/tvShowServ10"
+                    android:id="@+id/tvVorServ10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -927,10 +1058,11 @@
             android:layout_height="150dp">
 
             <Button
-                android:id="@+id/btnInter"
+                android:id="@+id/btnProSav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Habe interesse"
+                android:onClick="safeProfile"
+                android:text="Profil speichern"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

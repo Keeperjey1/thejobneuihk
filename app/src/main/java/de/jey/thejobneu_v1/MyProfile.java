@@ -10,9 +10,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,6 +31,15 @@ import java.sql.Array;
 import java.util.ArrayList;
 
 public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+
+    String jobauswahl;
+    TextView vorJobAuswahl;
+    EditText profilname;
+    TextView vorProfilname;
+    String derProfilname;
+
+
     Spinner spinBranche;
     Spinner spinJobs;
     Spinner spinJobs2;
@@ -125,6 +136,12 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
+        profilname = findViewById(R.id.edtProfilname);
+        vorProfilname = findViewById(R.id.tvVorProfilname);
+
+
+        vorJobAuswahl = findViewById(R.id.tvVorJobAus);
+
         spinBranche = findViewById(R.id.spiBranche);
         spinJobs = findViewById(R.id.spiJob);
         spinJobs2 = findViewById(R.id.spiJob2);
@@ -420,6 +437,7 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         spinJobs2.setOnItemSelectedListener(this);
         spiErfJob2.setOnItemSelectedListener(this);
         spinJobs3.setOnItemSelectedListener(this);
+
 
 
 
@@ -835,11 +853,25 @@ public class MyProfile extends AppCompatActivity implements AdapterView.OnItemSe
         layoutJob3.setVisibility(LinearLayout.VISIBLE);
     }
     public void vorschauAnzeigen(View view) {
-        setContentView(R.layout.profilvorschau);
+        //setContentView(R.layout.profilvorschau);
+       Intent intent = new Intent(this, ProfilVorschau.class);
+       intent.putExtra("vorProfilname", profilname.getText().toString());
+       intent.putExtra("firstJob", spinJobs.getSelectedItem().toString());
+      startActivity(intent);
+      //jobauswahl = spinJobs.getSelectedItem().toString();
+
+       //vorJobAuswahl.setText(spinJobs.getSelectedItem().toString());
+
+
+        //profilname = pickupData.getString("vorProfilname");
+       //vorProfilname.setText(derProfilname);
+      // intent.putExtra("jobauswahl", spinJobs.getSelectedItem().toString());
+
+
+
+
     }
-    public void safeProfile(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
+
    /* public void openFaehigkeiten(View view) {
         linLayFaehig.setVisibility(LinearLayout.VISIBLE);
     }*/
