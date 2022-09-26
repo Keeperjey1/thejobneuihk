@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class ShowJobOffer extends AppCompatActivity {
+public class ShowJobOfferDetails extends AppCompatActivity {
     TextView showId, showBeruf, showBetriebsart, showOrt, showVerfuegbarkeit;
 
 
